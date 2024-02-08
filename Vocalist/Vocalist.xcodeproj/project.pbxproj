@@ -10,7 +10,6 @@
 		FB29EF4E2B749FB200FC5B3A /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29EF4D2B749FB200FC5B3A /* AudioView.swift */; };
 		FB29EF542B74B0D700FC5B3A /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = FB29EF532B74B0D700FC5B3A /* DSWaveformImage */; };
 		FB29EF562B74B0D700FC5B3A /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = FB29EF552B74B0D700FC5B3A /* DSWaveformImageViews */; };
-		FB29EF582B74CCB100FC5B3A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29EF572B74CCB100FC5B3A /* AudioManager.swift */; };
 		FB8C442C2B7361CD00D8D7F2 /* VocalistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */; };
 		FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */; };
 		FB8C44302B7361CE00D8D7F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		FB29EF4D2B749FB200FC5B3A /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
-		FB29EF572B74CCB100FC5B3A /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		FB8C44282B7361CD00D8D7F2 /* Vocalist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vocalist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalistApp.swift; sourceTree = "<group>"; };
 		FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */,
 				FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */,
 				FB29EF4D2B749FB200FC5B3A /* AudioView.swift */,
-				FB29EF572B74CCB100FC5B3A /* AudioManager.swift */,
 				FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */,
 				FB8C44402B73B69400D8D7F2 /* Localizable.strings */,
 				FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */,
@@ -170,7 +167,6 @@
 				FB8C443B2B73637600D8D7F2 /* ReclistLoader.swift in Sources */,
 				FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */,
 				FB8C442C2B7361CD00D8D7F2 /* VocalistApp.swift in Sources */,
-				FB29EF582B74CCB100FC5B3A /* AudioManager.swift in Sources */,
 				FB29EF4E2B749FB200FC5B3A /* AudioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +311,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Vocalist/Vocalist.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -324,6 +321,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to record your voice.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -342,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Vocalist/Vocalist.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -351,6 +350,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to record your voice.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

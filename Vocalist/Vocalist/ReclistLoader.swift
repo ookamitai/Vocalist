@@ -59,7 +59,7 @@ struct ReclistLoader: View {
                                     filenameArray.append(String(item))
                                 }
                             }
-                            log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL.absoluteString) \(filenameArray.count)")
+                            log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL.path()) \(filenameArray.count)")
                             // log = filenameArray[0]
                         } else {
                             log = String(localized: "vocalist.loadFile.loadError \(filePathURL.absoluteString)")
@@ -69,7 +69,7 @@ struct ReclistLoader: View {
                     }
                 }
                 
-                Text(filePathURL.absoluteString == URL(filePath: "./").absoluteString ? "None" : filePathURL.absoluteString)
+                Text(filePathURL.absoluteString == URL(filePath: "./").absoluteString ? "None" : filePathURL.path())
                 
                 Spacer()
                 Toggle("vocalist.loadFile.useUnicodeToggle", isOn: $useUnicode)
@@ -86,13 +86,13 @@ struct ReclistLoader: View {
                     switch result {
                     case .success(let file):
                         folderPathURL = file
-                        log = "vocalist.loadFolder.success \(folderPathURL)"
+                        log = "vocalist.loadFolder.success \(folderPathURL.path())"
                     case .failure:
                         log = String(localized: "vocalist.loadFolder.fileImporterError")
                     }
                 }
                 
-                Text(folderPathURL.absoluteString == URL(filePath: "./").absoluteString ? "None" : folderPathURL.absoluteString)
+                Text(folderPathURL.absoluteString == URL(filePath: "./").absoluteString ? "None" : folderPathURL.path())
                 
                 Spacer()
             }

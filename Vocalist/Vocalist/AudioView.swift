@@ -18,7 +18,28 @@ struct AudioView: View {
         )
     @State private var filePresent: Bool = false
     @State private var fileDuration: Double = 0
-    @State var audioPlayer: AVPlayer!
+    @State private var fileSampleRate: Double = 0
+    @State private var fileChannel: UInt32 = 0
+    @State private var recordInitOK: Bool = false
+    @State private var isRecording: Bool = false
+    @State private var isPlaying: Bool = false
+    @State private var audioAsset: AVAsset!
+    @State private var audioPlayer: AVPlayer!
+    @State private var audioRecorder: AVAudioRecorder!
+    @State private var offset: CGFloat = 0
+    
+    let timer = Timer.publish(
+        every: 0.05,       // Second
+        tolerance: 0.1, // Gives tolerance so that SwiftUI makes optimization
+        on: .main,      // Main Thread
+        in: .common     // Common Loop
+    ).autoconnect()
+
+    
+    let recordSettings: [String : Any] = [AVFormatIDKey: Int(kAudioFormatLinearPCM),
+                                          AVSampleRateKey: 44100.0,
+                                          AVNumberOfChannelsKey: 1,
+                                          AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
     
     var body: some View {
         VStack {
@@ -28,10 +49,9 @@ struct AudioView: View {
                     .foregroundStyle(.secondary)
                     .fontDesign(.monospaced)
                     .italic()
-                    .padding(.top,3)
-                    .padding(.trailing, -4)
+                    .padding(.trailing, -5)
                 Text(fileName + ".wav")
-                    .font(.title)
+                    .font(.title3)
                     .bold()
                     .fontDesign(.monospaced)
                 Spacer()
@@ -39,48 +59,109 @@ struct AudioView: View {
             Divider()
             HStack {
                 if filePresent {
-                    WaveformView(audioURL: URL(filePath: folderPath + fileName + ".wav"), configuration: configuration, renderer: LinearWaveformRenderer())
-                        .padding(25)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(lineWidth: 1)
-                                .foregroundStyle(.gray)
-                                
-                        }
+                    GeometryReader { geometry in
+                        WaveformView(audioURL: URL(filePath: folderPath + fileName + ".wav"), configuration: configuration, renderer: LinearWaveformRenderer())
+                            .padding(.top, 30)
+                            .padding(.bottom, 30)
+                            .background {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(.black)
+                            }
+                            .overlay {
+                                    Rectangle()
+                                        .frame(width: 1, height: 150)
+                                        .foregroundStyle(.yellow)
+                                        .offset(x: -geometry.size.width / 2 + offset)
+                            }
+                            .onReceive(timer) { (_) in
+                                let time = audioPlayer.currentTime().seconds
+                                withAnimation(.linear(duration: 0.05)) {
+                                    offset = geometry.size.width * (time / fileDuration)
+                                }
+                            }
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(lineWidth: 1)
+                                    .foregroundStyle(.gray)
+    
+                            }
+                    }
                 } else {
-                    Text("vocalist.audioView.fileNotExist")
-                        .foregroundStyle(.secondary)
+                    if (isRecording) {
+                        Text("vocalist.audioView.recording")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text("vocalist.audioView.fileNotExist")
+                            .foregroundStyle(.secondary)
+                    }
+                    
                 }
             }
-            .frame(height: 100)
+            .frame(height: 150)
             .padding(5)
             Divider()
             HStack {
-                Button("vocalist.audioView.button.record") {}
+                Button(isRecording ? "vocalist.audioView.button.stopRecord" : "vocalist.audioView.button.record", systemImage: "record.circle") {
+                    isRecording.toggle()
+                    if isRecording {
+                        filePresent = false
+                        // audioRecorder.deleteRecording()
+                        audioRecorder.prepareToRecord()
+                        audioRecorder.record()
+                    } else {
+                        audioRecorder.stop()
+                        filePresent = true
+                        Task {
+                            await refreshData()
+                        }
+                    }
+                }
+                .disabled(!recordInitOK || audioPlayer.isPlaying)
+                if (!recordInitOK) {
+                    Text("vocalist.audioView.recordInitFailed")
+                }
                 Spacer()
-                Button("vocalist.audioView.button.play") {
+                Button("vocalist.audioView.button.play", systemImage: "play") {
                     audioPlayer.play()
                 }
-                Button("vocalist.audioView.button.pause") {
+                .disabled(!filePresent || isRecording)
+                Button("vocalist.audioView.button.pause", systemImage: "pause") {
                     audioPlayer.pause()
                 }
-                Button("vocalist.audioView.button.stop") {
+                .disabled(!filePresent || isRecording)
+                Button("vocalist.audioView.button.stop", systemImage: "stop") {
                     audioPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
                     audioPlayer.pause()
                 }
+                .disabled(!filePresent || isRecording)
             }
             .padding(.top, 5)
             .padding(.bottom, 5)
             
             VStack {
-                HStack {
-                    Text("vocalist.audioView.duration")
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text(String(fileDuration) + "s")
+                List {
+                    if (filePresent) {
+                        HStack {
+                            Text("vocalist.audioView.duration")
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(String(fileDuration) + "s")
+                        }
+                        HStack {
+                            Text("vocalist.audioView.sampleRate")
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(String(fileSampleRate) + "Hz")
+                        }
+                        HStack {
+                            Text("vocalist.audioView.channel")
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(String(fileChannel))
+                        }
+                    }
                 }
             }
-            .padding()
             .overlay {
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(lineWidth: 1)
@@ -91,21 +172,43 @@ struct AudioView: View {
         }
         .padding()
         .task {
-            if (FileManager.default.fileExists(atPath: folderPath + fileName + ".wav")) {
-                filePresent = true
-                audioPlayer = AVPlayer(url: URL(filePath: folderPath + fileName + ".wav"))
-                do {
-                    fileDuration = try await audioPlayer.currentItem!.asset.load(.duration).seconds
-                } catch {
-                    fileDuration = 0
-                }
+            await refreshData()
+        }
+    }
+    
+    func refreshData() async {
+        if (FileManager.default.fileExists(atPath: folderPath + fileName + ".wav")) {
+            filePresent = true
+            audioAsset = AVAsset(url: URL(filePath: folderPath + fileName + ".wav"))
+            audioPlayer = AVPlayer(playerItem: AVPlayerItem(asset: audioAsset))
+            let fileURL: URL = URL(filePath: folderPath + fileName + ".wav")
+            do {
+                audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
+                recordInitOK = true
+            } catch {
+                recordInitOK = false
             }
+            do {
+                fileDuration = try await audioPlayer.currentItem!.asset.load(.duration).seconds
+            } catch {}
             
+            do {
+                fileSampleRate = try AVAudioFile(forReading: fileURL).fileFormat.sampleRate
+            } catch {}
+            
+            do {
+                fileChannel = try AVAudioFile(forReading: fileURL).fileFormat.channelCount
+            } catch {}
         }
     }
     
 }
 
+extension AVPlayer {
+    var isPlaying: Bool {
+        return rate != 0 && error == nil
+    }
+}
 
 #Preview {
     struct Preview: View {

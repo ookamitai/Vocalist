@@ -14,6 +14,8 @@
 "vocalist.ui.config.title" = "Configuration";
 "vocalist.ui.config.reclist" = "Reclist";
 "vocalist.ui.config.folder" = "Folder";
+// ui - Audio
+"vocalist.ui.audio.title" = "Audio";
 // loadFile
 "vocalist.loadFile.loadButton" = "Load Reclist";
 "vocalist.loadFile.textfield" = "Reclist file...(Default encoding: Shift-JIS)";
@@ -25,12 +27,16 @@
 "vocalist.loadFolder.loadButton" = "Load Folder";
 "vocalist.loadFolder.fileImporterError" = "Error while selecting folder";
 "vocalist.loadFolder.success %@" = "Successfully loaded folder \"%@\"";
-"vocalist.ui.audio.title" = "Audio";
 // AudioView
-"vocalist.audioView.fileNotExist" = "File does not exist";
-"vocalist.audioView.initFailure" = "Failed to init audio file";
+"vocalist.audioView.fileNotExist" = "File does not exist.";
+"vocalist.audioView.recording" = "Recording...";
+"vocalist.audioView.initFailure" = "Failed to init audio file.";
+"vocalist.audioView.recordInitFailed" = "Failed to init audio recorder.";
+"vocalist.audioView.duration" = "Duration:";
+"vocalist.audioView.sampleRate" = "Sample Rate:";
+"vocalist.audioView.channel" = "Channel:";
 "vocalist.audioView.button.record" = "Record";
+"vocalist.audioView.button.stopRecord" = "Stop Recording";
 "vocalist.audioView.button.play" = "Play";
 "vocalist.audioView.button.pause" = "Pause";
 "vocalist.audioView.button.stop" = "Stop";
-"vocalist.audioView.duration" = "Duration:";
