@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ReclistLoader: View {
-    @State private var filePathURL: URL = URL(filePath: "./")
-    @State private var folderPathURL: URL = URL(filePath: "./")
+    @Binding var filePathURL: URL
+    @Binding var folderPathURL: URL
+    @Binding var useUnicode: Bool
+    @Binding var filenameArray: [String]
+    
     @State private var log: String = ""
-    @State private var useUnicode: Bool = false
     @State private var importFile: Bool = false
     @State private var importFolder: Bool = false
-    @Binding var filenameArray: [String]
+    
     
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            HStack() {
                 Text("vocalist.ui.appName")
                     .font(.title)
                     .bold()
@@ -40,8 +42,9 @@ struct ReclistLoader: View {
             
             // loadFile
             HStack {
-                Text("vocalist.ui.config.reclist")
+                Label("vocalist.ui.config.reclist", systemImage: "doc.plaintext.fill")
                     .font(.title3)
+                    .symbolRenderingMode(.multicolor)
                 Button("vocalist.loadFile.loadButton") {
                     importFile = true
                 }
@@ -74,7 +77,7 @@ struct ReclistLoader: View {
             
             //loadFolder
             HStack {
-                Text("vocalist.ui.config.folder")
+                Label("vocalist.ui.config.folder", systemImage: "folder.fill.badge.plus")
                     .font(.title3)
                 Button("vocalist.loadFolder.loadButton") {
                     importFolder = true
@@ -106,14 +109,20 @@ struct ReclistLoader: View {
             
         }
         .padding()
+        
+        Spacer()
     }
 }
 
 #Preview {
     struct Preview: View {
+        @State private var filePathURL: URL = URL(filePath: "./")
+        @State private var folderPathURL: URL = URL(filePath: "./")
+        @State private var useUnicode: Bool = false
         @State var filenameArray: [String] = ["1", "2"]
+        
         var body: some View {
-            ReclistLoader(filenameArray: $filenameArray)
+            ReclistLoader(filePathURL: $filePathURL, folderPathURL: $folderPathURL, useUnicode:$useUnicode, filenameArray: $filenameArray)
         }
     }
     
