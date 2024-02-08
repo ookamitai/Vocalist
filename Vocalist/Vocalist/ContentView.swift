@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var files: [String] = []
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            ReclistLoader(filenameArray: $files)
         }
-        .padding()
     }
 }
 

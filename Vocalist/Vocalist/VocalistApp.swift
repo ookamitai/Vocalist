@@ -12,6 +12,16 @@ struct VocalistApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.locale, .init(identifier: "en"))
+                .onDisappear {
+                    terminateApp()
+                }
+                .navigationTitle("vocalist.ui.appName")
         }
+        .windowResizability(.contentMinSize)
+    }
+    
+    private func terminateApp() {
+        NSApplication.shared.terminate(self)
     }
 }

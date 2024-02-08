@@ -11,6 +11,8 @@
 		FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */; };
 		FB8C44302B7361CE00D8D7F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */; };
 		FB8C44332B7361CE00D8D7F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8C44322B7361CE00D8D7F2 /* Preview Assets.xcassets */; };
+		FB8C443B2B73637600D8D7F2 /* ReclistLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */; };
+		FB8C443E2B73B69400D8D7F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8C44402B73B69400D8D7F2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,10 @@
 		FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8C44322B7361CE00D8D7F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB8C44342B7361CE00D8D7F2 /* Vocalist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vocalist.entitlements; sourceTree = "<group>"; };
+		FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReclistLoader.swift; sourceTree = "<group>"; };
+		FB8C443F2B73B69400D8D7F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FB8C44412B73B69600D8D7F2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FB8C44422B73B69700D8D7F2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			children = (
 				FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */,
 				FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */,
+				FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */,
+				FB8C44402B73B69400D8D7F2 /* Localizable.strings */,
 				FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */,
 				FB8C44342B7361CE00D8D7F2 /* Vocalist.entitlements */,
 				FB8C44312B7361CE00D8D7F2 /* Preview Content */,
@@ -111,6 +119,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = FB8C441F2B7361CD00D8D7F2;
 			productRefGroup = FB8C44292B7361CD00D8D7F2 /* Products */;
@@ -128,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8C44332B7361CE00D8D7F2 /* Preview Assets.xcassets in Resources */,
+				FB8C443E2B73B69400D8D7F2 /* Localizable.strings in Resources */,
 				FB8C44302B7361CE00D8D7F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,12 +150,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8C443B2B73637600D8D7F2 /* ReclistLoader.swift in Sources */,
 				FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */,
 				FB8C442C2B7361CD00D8D7F2 /* VocalistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB8C44402B73B69400D8D7F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8C443F2B73B69400D8D7F2 /* en */,
+				FB8C44412B73B69600D8D7F2 /* zh-Hans */,
+				FB8C44422B73B69700D8D7F2 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FB8C44352B7361CE00D8D7F2 /* Debug */ = {
