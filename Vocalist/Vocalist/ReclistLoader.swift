@@ -11,8 +11,8 @@ struct ReclistLoader: View {
     @Binding var filePathURL: URL?
     @Binding var folderPathURL: URL?
     @Binding var useUnicode: Bool
-    @Binding var showRec: Bool
-    @Binding var autoCreateFile: Bool
+    @Binding var hideRec: Bool
+    @Binding var fastMode: Bool
     @Binding var filenameArray: [String]
     @State private var log: String = ""
     @State private var importFile: Bool = false
@@ -29,10 +29,12 @@ struct ReclistLoader: View {
                     .font(.title3)
                     .fontDesign(.monospaced)
                     .italic()
-                    .padding(.top, 5)
+                    .padding(.top, 10)
                 Spacer()
             }
             Divider()
+            
+            /*
             HStack {
                 Label("vocalist.ui.config.title", systemImage: "gear")
                     .font(.title2)
@@ -41,212 +43,288 @@ struct ReclistLoader: View {
             }
             .padding(5)
             .padding(.bottom, 5)
-            
-            // loadFile
-            VStack {
-                HStack {
-                    Label("vocalist.ui.config.reclist", systemImage: "doc.plaintext.fill")
-                        .font(.title3)
-                        .symbolRenderingMode(.multicolor)
-                    Spacer()
-                }
-                HStack {
-                    Button("vocalist.loadFile.loadButton") {
-                        importFile = true
+             */
+            ScrollView {
+                // loadFile
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.reclist", systemImage: "doc.plaintext.fill")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
                     }
-                    .fileImporter(isPresented: $importFile, allowedContentTypes: [.text]) { result in
-                        switch result {
-                        case .success(let file):
-                            filePathURL = file
-                            UserDefaults.standard.set(filePathURL, forKey: "FilePathURL")
-                            if let rawFile = try? String(contentsOf: filePathURL!, encoding: (useUnicode ? .unicode : .shiftJIS)) {
-                                UserDefaults.standard.set(useUnicode, forKey: "UseUnicode")
-                                filenameArray = []
-                                for item in rawFile.split(whereSeparator: \.isNewline) {
-                                    if !item.isEmpty {
-                                        filenameArray.append(String(item))
+                    HStack {
+                        Button("vocalist.loadFile.loadButton") {
+                            importFile = true
+                        }
+                        .fileImporter(isPresented: $importFile, allowedContentTypes: [.text]) { result in
+                            switch result {
+                            case .success(let file):
+                                filePathURL = file
+                                UserDefaults.standard.set(filePathURL, forKey: "FilePathURL")
+                                if let rawFile = try? String(contentsOf: filePathURL!, encoding: (useUnicode ? .unicode : .shiftJIS)) {
+                                    UserDefaults.standard.set(useUnicode, forKey: "UseUnicode")
+                                    filenameArray = []
+                                    for item in rawFile.split(whereSeparator: \.isNewline) {
+                                        if !item.isEmpty {
+                                            filenameArray.append(String(item))
+                                        }
                                     }
+                                    log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL!.path()) \(filenameArray.count)")
+                                    // log = filenameArray[0]
+                                } else {
+                                    log = String(localized: "vocalist.loadFile.loadError \(filePathURL!.absoluteString)")
                                 }
-                                log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL!.path()) \(filenameArray.count)")
-                                // log = filenameArray[0]
-                            } else {
-                                log = String(localized: "vocalist.loadFile.loadError \(filePathURL!.absoluteString)")
+                            case .failure:
+                                log = String(localized: "vocalist.loadFile.fileImporterError")
                             }
-                        case .failure:
-                            log = String(localized: "vocalist.loadFile.fileImporterError")
                         }
+                        Text(filePathURL?.path() ?? "None")
+                        Spacer()
+                        Toggle("vocalist.loadFile.useUnicodeToggle", isOn: $useUnicode)
                     }
-                    Text(filePathURL?.path() ?? "None")
-                    Spacer()
-                    Toggle("vocalist.loadFile.useUnicodeToggle", isOn: $useUnicode)
                 }
-                .padding(.bottom, 10)
-            }
-            
-            //loadFolder
-            VStack {
-                HStack {
-                    Label("vocalist.ui.config.folder", systemImage: "folder.fill.badge.plus")
-                        .font(.title3)
-                    Spacer()
-                }
-                HStack {
-                    Button("vocalist.loadFolder.loadButton") {
-                        importFolder = true
-                    }
-                    .fileImporter(isPresented: $importFolder, allowedContentTypes: [.folder]) { result in
-                        switch result {
-                        case .success(let file):
-                            folderPathURL = file
-                            UserDefaults.standard.set(folderPathURL, forKey: "FolderPathURL")
-                            log = "vocalist.loadFolder.success \(folderPathURL!.path())"
-                        case .failure:
-                            log = String(localized: "vocalist.loadFolder.fileImporterError")
-                        }
-                    }
-                    
-                    Text(folderPathURL?.path() ?? "None")
-                    
-                    Spacer()
-                }
-                .padding(.bottom, 10)
-            }
-            
-            //autoCreateFile
-            VStack {
-                HStack {
-                    Label("vocalist.ui.config.autoCreateFile", systemImage: "plus.app.fill")
-                        .font(.title3)
-                    Spacer()
-                }
-                HStack {
-                    Toggle("vocalist.auutoCreateFile.autoToggle", isOn: $autoCreateFile)
-                        .onChange(of: autoCreateFile) {
-                            UserDefaults.standard.set(autoCreateFile, forKey: "AutoCreateFile")
-                        }
-                        .padding(.leading, 2)
-                    Text("vocalist.auutoCreateFile.desc")
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                }
-                
-            }
-            .padding(.bottom, 10)
-            
-            // showRec
-            VStack {
-                HStack {
-                    Label("vocalist.ui.config.showItem", systemImage: "eye.fill")
-                        .font(.title3)
-                    Spacer()
-                }
-                HStack {
-                    Toggle("vocalist.showRec.showRecToggle", isOn: $showRec)
-                        .onChange(of: showRec) {
-                            UserDefaults.standard.set(showRec, forKey: "ShowRecordedFiles")
-                        }
-                        .padding(.leading, 2)
-                    Spacer()
-                }
+                .padding(.top, 5)
                 .padding(.bottom, 5)
-                .padding(.leading, 1)
-                HStack {
-                    Spacer()
-                    
-                    VStack {
-                        List {
-                            NavigationLink {} label: {
-                                Label("vocalist.showRec.recorded", systemImage: "waveform")
-                                    .opacity(0.5)
-                            }
-                            NavigationLink {} label: {
-                                Label("vocalist.showRec.notRecorded", systemImage: "waveform")
+                
+                
+                Divider()
+                
+                //loadFolder
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.folder", systemImage: "folder.fill.badge.plus")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Button("vocalist.loadFolder.loadButton") {
+                            importFolder = true
+                        }
+                        .fileImporter(isPresented: $importFolder, allowedContentTypes: [.folder]) { result in
+                            switch result {
+                            case .success(let file):
+                                folderPathURL = file
+                                UserDefaults.standard.set(folderPathURL, forKey: "FolderPathURL")
+                                log = "vocalist.loadFolder.success \(folderPathURL!.path())"
+                            case .failure:
+                                log = String(localized: "vocalist.loadFolder.fileImporterError")
                             }
                         }
-                        .disabled(true)
-                        .frame(width: 150, height: 65)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(.blue, lineWidth: showRec ? 2 : 0)
-                        }
-                        Text("vocalist.showRec.enabled")
+                        
+                        Text(folderPathURL?.path() ?? "None")
+                        
+                        Spacer()
+                    }
+                }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Divider()
+                
+                // fastMode
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.fastMode", systemImage: "hare.fill")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
                     }
                     
-                    Spacer()
+                    HStack {
+                        Toggle("vocalist.fastMode.fastModeToggle", isOn: $fastMode)
+                            .onChange(of: fastMode) {
+                                UserDefaults.standard.set(hideRec, forKey: "FastMode")
+                            }
+                            .padding(.leading, 2)
+                        Spacer()
+                    }
+                    .padding(.bottom, 5)
+                    .padding(.leading, 1)
                     
-                    VStack {
-                        List {
-                            NavigationLink {} label: {
-                                ZStack {
-                                    HStack {
-                                        Label("vocalist.showRec.recorded", systemImage: "waveform")
-                                            .opacity(0.5)
-                                        Spacer()
-                                    }
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .frame(height: 2)
-                                        .foregroundStyle(.red)
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            List {
+                                HStack {
+                                    Label("vocalist.fastMode.record", systemImage: "record.circle")
+                                    Spacer()
+                                    Image(systemName: "arrow.right")
+                                }
+                                HStack {
+                                    Label("vocalist.fastMode.delete", systemImage: "trash")
+                                    Spacer()
+                                    Image(systemName: "arrow.left")
                                 }
                             }
-                            NavigationLink {} label: {
-                                Label("vocalist.showRec.notRecorded", systemImage: "waveform")
+                            .frame(width: 150, height: 65)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.blue, lineWidth: fastMode ? 2 : 0)
+                            }
+                            Text("vocalist.fastMode.enabled")
+                        }
+                        .onTapGesture {
+                            fastMode = true
+                        }
+                        
+                        Spacer()
+                        
+                        VStack {
+                            List {
+                                HStack {
+                                    Label("vocalist.fastMode.record", systemImage: "record.circle")
+                                    Spacer()
+                                    Image(systemName: "return")
+                                }
+                                HStack {
+                                    Label("vocalist.fastMode.delete", systemImage: "trash")
+                                    Spacer()
+                                    Image(systemName: "delete.left")
+                                }
+                            }
+                            .frame(width: 150, height: 65)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.blue, lineWidth: !fastMode ? 2 : 0)
+                            }
+                            Text("vocalist.fastMode.disabled")
+                        }
+                        .onTapGesture {
+                            fastMode = false
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 8)
+                            .brightness(-0.9)
+                    }
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(.gray, lineWidth: 1)
+                    }
+                    
+                }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Divider()
+                // hideRec
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.hideItem", systemImage: "eye.slash.fill")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Toggle("vocalist.hideRec.hideRecToggle", isOn: $hideRec)
+                            .onChange(of: hideRec) {
+                                UserDefaults.standard.set(hideRec, forKey: "ShowRecordedFiles")
+                            }
+                            .padding(.leading, 2)
+                        Spacer()
+                    }
+                    .padding(.bottom, 5)
+                    .padding(.leading, 1)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            List {
+                                Label("vocalist.hideRec.notRecorded", systemImage: "waveform")
+                                Spacer()
                             }
                             .disabled(true)
+                            .frame(width: 150, height: 65)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.blue, lineWidth: hideRec ? 2 : 0)
+                            }
+                            Text("vocalist.hideRec.enabled")
                         }
-                        .disabled(true)
-                        .frame(width: 150, height: 65)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(.blue, lineWidth: !showRec ? 2 : 0)
+                        .onTapGesture {
+                            hideRec = true
                         }
-                        Text("vocalist.showRec.disabled")
+                        
+                        Spacer()
+                        
+                        VStack {
+                            List {
+                                Label("vocalist.hideRec.recorded", systemImage: "waveform")
+                                    .opacity(0.5)
+                                
+                                Label("vocalist.hideRec.notRecorded", systemImage: "waveform")
+                                
+                            }
+                            .disabled(true)
+                            .frame(width: 150, height: 65)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.blue, lineWidth: !hideRec ? 2 : 0)
+                            }
+                            Text("vocalist.hideRec.disabled")
+                        }
+                        .onTapGesture {
+                            hideRec = false
+                        }
+                        Spacer()
                     }
-                    
-                    Spacer()
-                }
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 8)
-                        .brightness(-0.9)
-                }
-                .overlay {
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(.gray, lineWidth: 1)
-                }
-            }
-            .padding(.bottom, 10)
-            
-            // userDefaults
-            VStack {
-                HStack {
-                    Label("vocalist.ui.config.removeUserDefaults", systemImage: "trash.fill")
-                        .font(.title3)
-                    Spacer()
-                }
-                HStack {
-                    Button("vocalist.userDefaults.remove") {
-                        UserDefaults.resetDefaults()
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 8)
+                            .brightness(-0.9)
                     }
-                    Text("vocalist.userDefaults.removeWarning")
-                        .foregroundStyle(.red)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(.gray, lineWidth: 1)
+                    }
+                }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Divider()
+                
+                // userDefaults
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.removeUserDefaults", systemImage: "trash.fill")
+                            .font(.title3)
+                        Spacer()
+                    }
+                    HStack {
+                        Button("vocalist.userDefaults.remove") {
+                            UserDefaults.resetDefaults()
+                        }
+                        Text("vocalist.userDefaults.removeWarning")
+                            .foregroundStyle(.red)
+                        Spacer()
+                    }
+                }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Divider()
+                // log
+                HStack {
+                    Text(log)
+                        .fontDesign(.monospaced)
+                        .font(.footnote)
                     Spacer()
                 }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
             }
-            .padding(.bottom, 10)
-            
-            Divider()
-            // log
-            HStack {
-                Text(log)
-                    .fontDesign(.monospaced)
-                    .font(.footnote)
-                Spacer()
-            }
-            .padding(.top, 5)
-            
-            
+            // Spacer()
         }
         .padding()
         .onAppear {
@@ -265,8 +343,6 @@ struct ReclistLoader: View {
                 }
             }
         }
-        
-        Spacer()
     }
 }
 
@@ -284,12 +360,12 @@ extension UserDefaults {
         @State private var folderPathURL: URL? = URL(filePath: "./")
         @State private var useUnicode: Bool = false
         @State private var showRec: Bool = true
-        @State private var autoCreate: Bool = true
+        @State private var fastMode: Bool = true
         @State var filenameArray: [String] = ["1", "2"]
         
         var body: some View {
-            ReclistLoader(filePathURL: $filePathURL, folderPathURL: $folderPathURL, useUnicode:$useUnicode, showRec: $showRec, autoCreateFile: $autoCreate, filenameArray: $filenameArray)
-                .frame(width: 500, height: 400)
+            ReclistLoader(filePathURL: $filePathURL, folderPathURL: $folderPathURL, useUnicode:$useUnicode, hideRec: $showRec, fastMode: $fastMode, filenameArray: $filenameArray)
+                .frame(width: 500, height: 600)
         }
     }
     

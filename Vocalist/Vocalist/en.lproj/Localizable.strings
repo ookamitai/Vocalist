@@ -15,8 +15,8 @@
 "vocalist.ui.config.title" = "Configuration";
 "vocalist.ui.config.reclist" = "Reclist";
 "vocalist.ui.config.folder" = "Folder";
-"vocalist.ui.config.autoCreateFile" = "Automatically create file";
-"vocalist.ui.config.showItem" = "Show recorded items";
+"vocalist.ui.config.fastMode" = "Fast mode";
+"vocalist.ui.config.hideItem" = "Hide recorded items";
 "vocalist.ui.config.removeUserDefaults" = "Remove UserDefaults";
 // ui - Audio
 "vocalist.ui.audio.title" = "Audio";
@@ -31,15 +31,18 @@
 "vocalist.loadFolder.loadButton" = "Load Folder";
 "vocalist.loadFolder.fileImporterError" = "Error while selecting folder";
 "vocalist.loadFolder.success %@" = "Successfully loaded folder \"%@\"";
-// autoCreateFile
-"vocalist.auutoCreateFile.autoToggle" = "Create file?";
-"vocalist.auutoCreateFile.desc" = "Creates file before initing audio recorder.";
-// showRec
-"vocalist.showRec.showRecToggle" = "Show item?";
-"vocalist.showRec.recorded" = "Recorded";
-"vocalist.showRec.notRecorded" = "NotRecorded";
-"vocalist.showRec.enabled" = "Enabled";
-"vocalist.showRec.disabled" = "Disabled";
+// fastMode
+"vocalist.fastMode.fastModeToggle" = "Use fast mode?";
+"vocalist.fastMode.enabled" = "Enabled";
+"vocalist.fastMode.disabled" = "Disabled";
+"vocalist.fastMode.record" = "Record";
+"vocalist.fastMode.delete" = "Delete";
+// hideRec
+"vocalist.hideRec.hideRecToggle" = "Hide item?";
+"vocalist.hideRec.recorded" = "Recorded";
+"vocalist.hideRec.notRecorded" = "NotRecorded";
+"vocalist.hideRec.enabled" = "Enabled";
+"vocalist.hideRec.disabled" = "Disabled";
 // userDefaults
 "vocalist.userDefaults.remove" = "Remove";
 "vocalist.userDefaults.removeWarning" = "Warning: this operation will remove all saved preferences!";

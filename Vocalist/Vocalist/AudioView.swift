@@ -14,11 +14,11 @@ struct AudioView: View {
     enum FileState: Int {
         case notPresent = 0
         case isPresent = 1
-        case isPresentButEmpty = -1
     }
     
     @State var folderPath: String
     @State var fileName: String
+    @State var fastMode: Bool
     @State private var fileURL: URL = URL(filePath: "")
     @State private var configuration: Waveform.Configuration = Waveform.Configuration(
             style: .gradient([.gray, .white])
@@ -28,7 +28,7 @@ struct AudioView: View {
     @State private var fileSampleRate: Double = 0
     @State private var fileChannel: UInt32 = 0
     @State private var fileSize: UInt64 = 0
-    @State private var recordInitOK: Bool = false
+    // @State private var recordInitOK: Bool = false
     @State private var isRecording: Bool = false
     @State private var isPaused: Bool = false
     @State private var audioAsset: AVAsset!
@@ -72,6 +72,7 @@ struct AudioView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .padding(.leading, 3)
+                    .padding(.top, 3)
                 Spacer()
             }
             HStack {
@@ -137,9 +138,6 @@ struct AudioView: View {
                     if (isRecording) {
                         Text("vocalist.audioView.recording")
                             .foregroundStyle(.secondary)
-                    } else if (filePresent == .isPresentButEmpty){
-                        Text("vocalist.audioView.fileExistButEmpty")
-                            .foregroundStyle(.secondary)
                     } else {
                         Text("vocalist.audioView.fileNotExist")
                             .foregroundStyle(.secondary)
@@ -151,11 +149,14 @@ struct AudioView: View {
             .padding(5)
             Divider()
             HStack {
-                Button(isRecording ? "\(String(localized: "vocalist.audioView.button.stopRecord")) \(Image(systemName: "command"))R" : "\(String(localized: "vocalist.audioView.button.record")) \(Image(systemName: "command"))R", systemImage: "record.circle") {
+                Button(isRecording ? "\(String(localized: "vocalist.audioView.button.stopRecord")) \(Image(systemName: fastMode ? "arrow.right" : "return"))" : "\(String(localized: "vocalist.audioView.button.record")) \(Image(systemName: fastMode ? "arrow.right" : "return"))", systemImage: "record.circle") {
                     isRecording.toggle()
                     if isRecording {
                         filePresent = .notPresent
                         // audioRecorder.deleteRecording()
+                        audioPlayer.pause()
+                        audioPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+                        isPaused = true
                         audioRecorder.prepareToRecord()
                         audioRecorder.record()
                     } else {
@@ -166,21 +167,8 @@ struct AudioView: View {
                         }
                     }
                 }
-                .keyboardShortcut("R", modifiers: .command)
-                .disabled(!recordInitOK || audioPlayer.isPlaying)
-                if (!recordInitOK) {
-                    Text("vocalist.audioView.recordInitFailed")
-                    Button("\(String(localized: "vocalist.audioView.button.createEmptyFile")) \(Image(systemName: "command"))B") {
-                        do {
-                            try Data("".utf8).write(to: fileURL)
-                            Task {
-                                await refreshData()
-                                filePresent = .isPresentButEmpty
-                            }
-                        } catch {}
-                    }
-                    .keyboardShortcut("B", modifiers: .command)
-                }
+                .keyboardShortcut(fastMode ? .rightArrow : .return, modifiers: [])
+                
                 Spacer()
                 Button("\(String(localized: "vocalist.audioView.button.play")) \(Image(systemName: "space"))", systemImage: "play") {
                     audioPlayer.play()
@@ -204,9 +192,10 @@ struct AudioView: View {
                 .disabled(filePresent == .notPresent || isRecording)
             }
             .padding(.top, 5)
+            .padding(.bottom, 5)
             
             HStack {
-                Button("\(String(localized: "vocalist.audioView.button.delete")) \(Image(systemName: "delete.left"))", systemImage: "trash") {
+                Button("\(String(localized: "vocalist.audioView.button.delete")) \(Image(systemName: fastMode ? "arrow.left" : "delete.left"))", systemImage: "trash") {
                     do {
                         try FileManager.default.removeItem(at: fileURL)
                     } catch {}
@@ -216,7 +205,7 @@ struct AudioView: View {
                         filePresent = .notPresent
                     }
                 }
-                .keyboardShortcut(.delete, modifiers: [])
+                .keyboardShortcut(fastMode ? .leftArrow : .delete, modifiers: [])
                 .disabled(filePresent == .notPresent || isRecording)
                 Spacer()
                 Button("\(String(localized: "vocalist.audioView.button.refresh")) \(Image(systemName: "command"))F", systemImage: "arrow.clockwise") {
@@ -228,6 +217,7 @@ struct AudioView: View {
                 .keyboardShortcut("F", modifiers: .command)
                 .disabled(isRecording)
             }
+            .padding(.top, 5)
             .padding(.bottom, 5)
             
             VStack {
@@ -266,7 +256,7 @@ struct AudioView: View {
                     .foregroundStyle(.gray)
             }
             
-            Spacer()
+            // Spacer()
         }
         .padding()
         .task {
@@ -285,37 +275,33 @@ struct AudioView: View {
     }
     
     func refreshData() async -> Void {
-        if (FileManager.default.fileExists(atPath: fileURL.path())) {
-            do {
-                let attr = try FileManager.default.attributesOfItem(atPath: fileURL.path())
-                fileSize = attr[FileAttributeKey.size] as! UInt64
-            } catch {}
-            if (fileSize == 0) {
-                filePresent = .isPresentButEmpty
-            } else {
-                filePresent = .isPresent
-            }
-            audioAsset = AVAsset(url: fileURL)
-            audioPlayer = AVPlayer(playerItem: AVPlayerItem(asset: audioAsset))
-            fileURL = URL(filePath: fileURL.path())
-            do {
-                audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
-                recordInitOK = true
-            } catch {
-                recordInitOK = false
-            }
-            do {
-                fileDuration = try await audioPlayer.currentItem!.asset.load(.duration).seconds
-            } catch {}
-            
-            do {
-                fileSampleRate = try AVAudioFile(forReading: fileURL).fileFormat.sampleRate
-            } catch {}
-            
-            do {
-                fileChannel = try AVAudioFile(forReading: fileURL).fileFormat.channelCount
-            } catch {}
+        let audioHere = FileManager.default.fileExists(atPath: fileURL.path())
+        do {
+            let attr = try FileManager.default.attributesOfItem(atPath: fileURL.path())
+            fileSize = attr[FileAttributeKey.size] as! UInt64
+        } catch {}
+        if (audioHere) {
+            filePresent = .isPresent
+        } else {
+            filePresent = .notPresent
         }
+        audioAsset = AVAsset(url: fileURL)
+        audioPlayer = AVPlayer(playerItem: AVPlayerItem(asset: audioAsset))
+        fileURL = URL(filePath: fileURL.path())
+        do {
+            audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
+        } catch {}
+        do {
+            fileDuration = try await audioPlayer.currentItem!.asset.load(.duration).seconds
+        } catch {}
+        
+        do {
+            fileSampleRate = try AVAudioFile(forReading: fileURL).fileFormat.sampleRate
+        } catch {}
+        
+        do {
+            fileChannel = try AVAudioFile(forReading: fileURL).fileFormat.channelCount
+        } catch {}
     }
     
 }
@@ -330,9 +316,11 @@ extension AVPlayer {
     struct Preview: View {
         @State private var folderPathURL: String = "/Users/ookamitai/Desktop/"
         @State private var fileName: String = "Recorded"
+        @State private var fastMode: Bool = true
         
         var body: some View {
-            AudioView(folderPath: folderPathURL, fileName: fileName)
+            AudioView(folderPath: folderPathURL, fileName: fileName, fastMode: fastMode)
+                .frame(minHeight: 600)
         }
     }
     
