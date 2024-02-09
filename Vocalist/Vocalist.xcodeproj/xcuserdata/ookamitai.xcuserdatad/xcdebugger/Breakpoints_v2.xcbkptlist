@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0C71A0A2-9089-463C-8493-8EB71FD5F81F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ECE19265-551C-4040-B5D5-36B172A6DA09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/Vocalist-bnjgicyprnndpwdpaiidedihntaw/SourcePackages/checkouts/DSWaveformImage/Sources/DSWaveformImageViews/SwiftUI/WaveformView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "update(size:url:configuration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C1D5A11-9683-4709-9745-34827AD7DAFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vocalist/AudioView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "refreshData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C1D5A11-9683-4709-9745-34827AD7DAFC - 70c4271acc8e6e3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vocalist.AudioView.refreshData() async -&gt; ()"
+                  moduleName = "Vocalist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ookamitai/Desktop/Programming/Vocalist/Vocalist/Vocalist/AudioView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "6C1D5A11-9683-4709-9745-34827AD7DAFC - 25adc1447d3a7b97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Vocalist.AudioView.refreshData() async -&gt; ()"
+                  moduleName = "Vocalist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ookamitai/Desktop/Programming/Vocalist/Vocalist/Vocalist/AudioView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "6C1D5A11-9683-4709-9745-34827AD7DAFC - 25adc1447d3a7bb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Vocalist.AudioView.refreshData() async -&gt; ()"
+                  moduleName = "Vocalist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ookamitai/Desktop/Programming/Vocalist/Vocalist/Vocalist/AudioView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "564">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

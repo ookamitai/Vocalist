@@ -10,11 +10,15 @@ import SwiftUI
 struct ReclistLoader: View {
     @Binding var filePathURL: URL?
     @Binding var folderPathURL: URL?
-    @Binding var useUnicode: Bool
+    @Binding var useUTF8: Bool
     @Binding var hideRec: Bool
     @Binding var fastMode: Bool
     @Binding var filenameArray: [String]
+    // @Binding var itemPerPage: UInt32
+    // @Binding var pageIndex: UInt32
+    // @Binding var pageNumber: UInt32
     @State private var log: String = ""
+    @State private var tmp: String = ""
     @State private var importFile: Bool = false
     @State private var importFolder: Bool = false
     
@@ -62,8 +66,8 @@ struct ReclistLoader: View {
                             case .success(let file):
                                 filePathURL = file
                                 UserDefaults.standard.set(filePathURL, forKey: "FilePathURL")
-                                if let rawFile = try? String(contentsOf: filePathURL!, encoding: (useUnicode ? .unicode : .shiftJIS)) {
-                                    UserDefaults.standard.set(useUnicode, forKey: "UseUnicode")
+                                if let rawFile = try? String(contentsOf: filePathURL!, encoding: (useUTF8 ? .utf8 : .shiftJIS)) {
+                                    UserDefaults.standard.set(useUTF8, forKey: "UseUTF8")
                                     filenameArray = []
                                     for item in rawFile.split(whereSeparator: \.isNewline) {
                                         if !item.isEmpty {
@@ -81,7 +85,7 @@ struct ReclistLoader: View {
                         }
                         Text(filePathURL?.path() ?? "None")
                         Spacer()
-                        Toggle("vocalist.loadFile.useUnicodeToggle", isOn: $useUnicode)
+                        Toggle("vocalist.loadFile.useUTF8Toggle", isOn: $useUTF8)
                     }
                 }
                 .padding(.top, 5)
@@ -122,6 +126,53 @@ struct ReclistLoader: View {
                 .padding(.bottom, 5)
                 
                 Divider()
+                
+                // paging
+                /*
+                VStack {
+                    HStack {
+                        Label("vocalist.ui.config.paging", systemImage: "book.pages.fill")
+                            .font(.title2)
+                            .bold()
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text("vocalist.paging.itemPerPage")
+                        TextField("", text: $tmp)
+                            .onSubmit {
+                                itemPerPage = UInt32(tmp) ?? 10
+                                pageNumber = UInt32(ceil(Double(filenameArray.count) / Double(itemPerPage)))
+                            }
+                        Text("\(Image(systemName: "arrow.right")) \(itemPerPage)")
+                        Spacer()
+                    }
+                    HStack {
+                        Text("vocalist.paging.pageCount")
+                        Text("\(pageNumber)")
+                            .fontDesign(.monospaced)
+                        Spacer()
+                        Text("vocalist.paging.atPage")
+                        Button("+") {
+                            if pageIndex < pageNumber {
+                                pageIndex += 1
+                            }
+                        }
+                        Text("\(pageIndex)")
+                            .fontDesign(.monospaced)
+                        Button("-") {
+                            if pageIndex > 0 {
+                                pageIndex -= 1
+                            }
+                        }
+                    }
+                    
+                }
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                
+                Divider()
+                 */
                 
                 // fastMode
                 VStack {
@@ -329,7 +380,9 @@ struct ReclistLoader: View {
         .padding()
         .onAppear {
             if filePathURL != nil {
-                if let rawFile = try? String(contentsOf: filePathURL!, encoding: (useUnicode ? .unicode : .shiftJIS)) {
+                var rawFile = ""
+                do {
+                    rawFile = try String(contentsOf: filePathURL!, encoding: (useUTF8 ? .utf8 : .shiftJIS))
                     filenameArray = []
                     for item in rawFile.split(whereSeparator: \.isNewline) {
                         if !item.isEmpty {
@@ -338,8 +391,9 @@ struct ReclistLoader: View {
                     }
                     log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL!.path()) \(filenameArray.count)")
                     // log = filenameArray[0]
-                } else {
-                    log = String(localized: "vocalist.loadFile.loadError \(filePathURL!.absoluteString)")
+                    
+                } catch {
+                    log = String(localized: "vocalist.loadFile.loadError \(error.localizedDescription)")
                 }
             }
         }
@@ -358,13 +412,13 @@ extension UserDefaults {
     struct Preview: View {
         @State private var filePathURL: URL? = URL(filePath: "./")
         @State private var folderPathURL: URL? = URL(filePath: "./")
-        @State private var useUnicode: Bool = false
+        @State private var useUTF8: Bool = false
         @State private var showRec: Bool = true
         @State private var fastMode: Bool = true
         @State var filenameArray: [String] = ["1", "2"]
         
         var body: some View {
-            ReclistLoader(filePathURL: $filePathURL, folderPathURL: $folderPathURL, useUnicode:$useUnicode, hideRec: $showRec, fastMode: $fastMode, filenameArray: $filenameArray)
+            ReclistLoader(filePathURL: $filePathURL, folderPathURL: $folderPathURL, useUTF8: $useUTF8, hideRec: $showRec, fastMode: $fastMode, filenameArray: $filenameArray)
                 .frame(width: 500, height: 600)
         }
     }

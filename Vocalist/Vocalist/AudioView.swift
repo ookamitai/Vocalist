@@ -5,6 +5,7 @@
 //  Created by ookamitai on 2/8/24.
 //
 
+import Foundation
 import SwiftUI
 import AVKit
 import DSWaveformImage
@@ -19,7 +20,7 @@ struct AudioView: View {
     @State var folderPath: String
     @State var fileName: String
     @State var fastMode: Bool
-    @State private var fileURL: URL = URL(filePath: "")
+    @State private var filePath: String = ""
     @State private var configuration: Waveform.Configuration = Waveform.Configuration(
             style: .gradient([.gray, .white])
         )
@@ -93,7 +94,8 @@ struct AudioView: View {
             HStack {
                 if filePresent == .isPresent {
                     GeometryReader { geometry in
-                        VStack {                                RoundedRectangle(cornerRadius: 8)
+                        VStack {                                
+                            RoundedRectangle(cornerRadius: 8)
                                 .frame(height: 2)
                                 .foregroundStyle(.secondary)
                                 .overlay {
@@ -109,12 +111,12 @@ struct AudioView: View {
                                         .offset(x: 0)
                                 }
                             ZStack {
-                                WaveformView(audioURL: fileURL, configuration: configuration, renderer: LinearWaveformRenderer())
+                                WaveformView(audioURL: URL(filePath: filePath), configuration: configuration, renderer: LinearWaveformRenderer())
                                     .padding(.top, 35)
                                     .padding(.bottom, 35)
                                     .background {
                                         RoundedRectangle(cornerRadius: 8)
-                                            .brightness(-0.9)
+                                            .brightness(-0.885)
                                     }
                                     .overlay {
                                         RoundedRectangle(cornerRadius: 8)
@@ -213,7 +215,7 @@ struct AudioView: View {
             HStack {
                 Button("\(String(localized: "vocalist.audioView.button.delete")) \(Image(systemName: fastMode ? "arrow.left" : "delete.left"))", systemImage: "trash") {
                     do {
-                        try FileManager.default.removeItem(at: fileURL)
+                        try FileManager.default.removeItem(at: URL(filePath: filePath))
                     } catch {}
                     
                     Task {
@@ -244,30 +246,35 @@ struct AudioView: View {
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text("\(String(fileDuration))s")
+                                .fontDesign(.monospaced)
                         }
                         HStack {
                             Text("vocalist.audioView.sampleRate")
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text("\(String(fileSampleRate))Hz")
+                                .fontDesign(.monospaced)
                         }
                         HStack {
                             Text("vocalist.audioView.channel")
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text(String(fileChannel))
+                                .fontDesign(.monospaced)
                         }
                         HStack {
                             Text("vocalist.audioView.fileSize")
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text("\(String(Int(fileSize / 1024).formatted())) KiB (\(String(Int(fileSize / 1000).formatted())) KB)")
+                                .fontDesign(.monospaced)
                         }
                         HStack {
                             Text("vocalist.audioView.fileSize")
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text("\(String((Double(fileSize) / 1024.0 / 1024.0).formatted())) MiB (\(String((Double(fileSize) / 1000000.0).formatted())) MB)")
+                                .fontDesign(.monospaced)
                         }
                     }
                 }
@@ -282,7 +289,7 @@ struct AudioView: View {
         }
         .padding()
         .task {
-            fileURL = URL(filePath: folderPath + fileName + ".wav")
+            filePath = "\(folderPath)\(fileName).wav"
             await refreshData()
         }
         .onDisappear {
@@ -297,32 +304,29 @@ struct AudioView: View {
     }
     
     func refreshData() async -> Void {
-        let audioHere = FileManager.default.fileExists(atPath: fileURL.path())
-        do {
-            let attr = try FileManager.default.attributesOfItem(atPath: fileURL.path())
-            fileSize = attr[FileAttributeKey.size] as! UInt64
-        } catch {}
+        let audioHere = isFileExist(filePath)
         if (audioHere) {
             filePresent = .isPresent
         } else {
             filePresent = .notPresent
         }
-        audioAsset = AVAsset(url: fileURL)
+        fileSize = getFileSize(filePath)
+        audioAsset = AVAsset(url: URL(filePath: filePath))
         audioPlayer = AVPlayer(playerItem: AVPlayerItem(asset: audioAsset))
-        fileURL = URL(filePath: fileURL.path())
+        
         do {
-            audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
+            audioRecorder = try AVAudioRecorder(url: URL(filePath: filePath), settings: recordSettings)
         } catch {}
         do {
             fileDuration = try await audioPlayer.currentItem!.asset.load(.duration).seconds
         } catch {}
         
         do {
-            fileSampleRate = try AVAudioFile(forReading: fileURL).fileFormat.sampleRate
+            fileSampleRate = try AVAudioFile(forReading: URL(filePath: filePath)).fileFormat.sampleRate
         } catch {}
         
         do {
-            fileChannel = try AVAudioFile(forReading: fileURL).fileFormat.channelCount
+            fileChannel = try AVAudioFile(forReading: URL(filePath: filePath)).fileFormat.channelCount
         } catch {}
     }
     

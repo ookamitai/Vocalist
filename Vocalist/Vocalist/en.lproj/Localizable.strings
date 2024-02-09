@@ -15,15 +15,18 @@
 "vocalist.ui.config.title" = "Configuration";
 "vocalist.ui.config.reclist" = "Reclist";
 "vocalist.ui.config.folder" = "Folder";
+"vocalist.ui.config.paging" = "Paging";
 "vocalist.ui.config.fastMode" = "Fast mode";
 "vocalist.ui.config.hideItem" = "Hide recorded items";
 "vocalist.ui.config.removeUserDefaults" = "Remove UserDefaults";
+// ui- Audit
+"vocalist.ui.audit.title" = "Audit";
 // ui - Audio
 "vocalist.ui.audio.title" = "Audio";
 // loadFile
 "vocalist.loadFile.loadButton" = "Load Reclist";
 "vocalist.loadFile.textfield" = "Reclist file...(Default encoding: Shift-JIS)";
-"vocalist.loadFile.useUnicodeToggle" = "Use Unicode?";
+"vocalist.loadFile.useUTF8Toggle" = "Use UTF8?";
 "vocalist.loadFile.loadError %@" = "Error while loading file: \"%@\"";
 "vocalist.loadFile.loadSuccess %@ %lld" = "Successfully loaded file \"%@\" with %lld entry(ies)";
 "vocalist.loadFile.fileImporterError" = "Error while selecting file";
@@ -31,6 +34,10 @@
 "vocalist.loadFolder.loadButton" = "Load Folder";
 "vocalist.loadFolder.fileImporterError" = "Error while selecting folder";
 "vocalist.loadFolder.success %@" = "Successfully loaded folder \"%@\"";
+// paging
+"vocalist.paging.itemPerPage" = "Item per page:";
+"vocalist.paging.pageCount" = "Number of pages:";
+"vocalist.paging.atPage" = "At page:";
 // fastMode
 "vocalist.fastMode.fastModeToggle" = "Use fast mode?";
 "vocalist.fastMode.enabled" = "Enabled";
@@ -66,3 +73,17 @@
 "vocalist.audioView.button.stop" = "Stop";
 "vocalist.audioView.button.delete" = "Delete";
 "vocalist.audioView.button.refresh" = "Refresh (Aysnc)";
+// AuditView
+"vocalist.auditView.auditMode" = "Audit mode";
+"vocalist.auditView.currentProgress" = "Current progress:";
+"vocalist.auditView.nofile" = "No files.";
+"vocalist.auditView.progress %lld %lld %lld" = "%1$lld of %2$lld file(s), %3$lld more to go.";
+"vocalist.auditView.name" = "Name";
+"vocalist.auditView.presence" = "Presence";
+"vocalist.auditView.duration" = "Duration";
+"vocalist.auditView.size" = "Size";
+"vocalist.auditView.loading" = "Loading...";
+"vocalist.auditView.present" = "Present";
+"vocalist.auditView.absent" = "Absent";
+"vocalist.auditView.avgSize" = "Average size:";
+"vocalist.auditView.avgDuration" = "Average duration:";
