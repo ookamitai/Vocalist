@@ -10,10 +10,14 @@
 "vocalist.ui.appName" = "Vocalist";
 "vocalist.ui.version" = "0.1a";
 "vocalist.ui.author" = "Made with love by ookamitai";
+"vocalist.ui.hint" = "To load previous configuration, select the item in the sidebar.";
 // ui - config
 "vocalist.ui.config.title" = "Configuration";
 "vocalist.ui.config.reclist" = "Reclist";
 "vocalist.ui.config.folder" = "Folder";
+"vocalist.ui.config.autoCreateFile" = "Automatically create file";
+"vocalist.ui.config.showItem" = "Show recorded items";
+"vocalist.ui.config.removeUserDefaults" = "Remove UserDefaults";
 // ui - Audio
 "vocalist.ui.audio.title" = "Audio";
 // loadFile
@@ -21,22 +25,41 @@
 "vocalist.loadFile.textfield" = "Reclist file...(Default encoding: Shift-JIS)";
 "vocalist.loadFile.useUnicodeToggle" = "Use Unicode?";
 "vocalist.loadFile.loadError %@" = "Error while loading file: \"%@\"";
-"vocalist.loadFile.loadSuccess %@ %lld" = "Successfully loaded file \"%@\" with %lld entrie(s)";
+"vocalist.loadFile.loadSuccess %@ %lld" = "Successfully loaded file \"%@\" with %lld entry(ies)";
 "vocalist.loadFile.fileImporterError" = "Error while selecting file";
 // loadFolder
 "vocalist.loadFolder.loadButton" = "Load Folder";
 "vocalist.loadFolder.fileImporterError" = "Error while selecting folder";
 "vocalist.loadFolder.success %@" = "Successfully loaded folder \"%@\"";
+// autoCreateFile
+"vocalist.auutoCreateFile.autoToggle" = "Create file?";
+"vocalist.auutoCreateFile.desc" = "Creates file before initing audio recorder.";
+// showRec
+"vocalist.showRec.showRecToggle" = "Show item?";
+"vocalist.showRec.recorded" = "Recorded";
+"vocalist.showRec.notRecorded" = "NotRecorded";
+"vocalist.showRec.enabled" = "Enabled";
+"vocalist.showRec.disabled" = "Disabled";
+// userDefaults
+"vocalist.userDefaults.remove" = "Remove";
+"vocalist.userDefaults.removeWarning" = "Warning: this operation will remove all saved preferences!";
 // AudioView
+"vocalist.audioView.nowRecording" = "Now recording:";
+"vocalist.audioView.saveTo" = "Saving to:";
 "vocalist.audioView.fileNotExist" = "File does not exist.";
+"vocalist.audioView.fileExistButEmpty" = "File is emtpy.";
 "vocalist.audioView.recording" = "Recording...";
 "vocalist.audioView.initFailure" = "Failed to init audio file.";
 "vocalist.audioView.recordInitFailed" = "Failed to init audio recorder.";
 "vocalist.audioView.duration" = "Duration:";
 "vocalist.audioView.sampleRate" = "Sample Rate:";
 "vocalist.audioView.channel" = "Channel:";
+"vocalist.audioView.fileSize" = "File size:";
 "vocalist.audioView.button.record" = "Record";
 "vocalist.audioView.button.stopRecord" = "Stop Recording";
+"vocalist.audioView.button.createEmptyFile" = "Create Empty File";
 "vocalist.audioView.button.play" = "Play";
 "vocalist.audioView.button.pause" = "Pause";
 "vocalist.audioView.button.stop" = "Stop";
+"vocalist.audioView.button.delete" = "Delete";
+"vocalist.audioView.button.refresh" = "Refresh (Aysnc)";

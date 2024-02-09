@@ -17,8 +17,9 @@ struct VocalistApp: App {
                     terminateApp()
                 }
                 .navigationTitle("vocalist.ui.appName")
+                .frame(idealWidth: 1000, idealHeight: 600)
         }
-        .windowResizability(.contentMinSize)
+        .windowResizability(.contentSize)
     }
     
     private func terminateApp() {
