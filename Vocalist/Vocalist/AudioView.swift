@@ -74,9 +74,11 @@ struct AudioView: View {
                                         .offset(x: -geometry.size.width / 2 + offset)
                             }
                             .onReceive(timer) { (_) in
-                                let time = audioPlayer.currentTime().seconds
-                                withAnimation(.linear(duration: 0.05)) {
-                                    offset = geometry.size.width * (time / fileDuration)
+                                if (audioPlayer.isPlaying) {
+                                    let time = audioPlayer.currentTime().seconds
+                                    withAnimation(.linear(duration: 0.05)) {
+                                        offset = geometry.size.width * (time / fileDuration)
+                                    }
                                 }
                             }
                             .overlay {
