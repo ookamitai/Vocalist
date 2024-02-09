@@ -93,46 +93,62 @@ struct AudioView: View {
             HStack {
                 if filePresent == .isPresent {
                     GeometryReader { geometry in
-                        ZStack {
-                            WaveformView(audioURL: fileURL, configuration: configuration, renderer: LinearWaveformRenderer())
-                                .padding(.top, 35)
-                                .padding(.bottom, 35)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .brightness(-0.9)
-                                }
+                        VStack {                                RoundedRectangle(cornerRadius: 8)
+                                .frame(height: 2)
+                                .foregroundStyle(.secondary)
                                 .overlay {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(lineWidth: 1)
-                                }
-                            
-                            
-                            RoundedRectangle(cornerRadius: 8)
-                                .frame(width: 2, height: 150)
-                                .overlay {
-                                    Image(systemName: "triangle.fill")
-                                        .resizable()
-                                        .rotationEffect(.degrees(180))
-                                        .offset(x: -0.25, y: -82)
-                                        .opacity(1)
-                                        .frame(width: 10, height: 7)
-                                }
-                                .foregroundStyle(.yellow)
-                                .offset(x: -geometry.size.width / 2 + offset)
-                                .onReceive(timer) { (_) in
-                                    if (audioPlayer.isPlaying || isPaused) {
-                                        let time = audioPlayer.currentTime().seconds
-                                        withAnimation(.linear(duration: 0.1)) {
-                                            offset = geometry.size.width * (time / fileDuration)
-                                        }
-                                    } else {
-                                        audioPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
-                                        offset = 0
+                                    ForEach([-2, -8/3, -4, -8, 8, 4, 8/3, 2], id: \.self) { num in
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .frame(width: 2, height: 10)
+                                            .foregroundStyle(.white)
+                                            .offset(x: -geometry.size.width / num)
                                     }
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 2, height: 10)
+                                        .foregroundStyle(.white)
+                                        .offset(x: 0)
                                 }
-                            
+                            ZStack {
+                                WaveformView(audioURL: fileURL, configuration: configuration, renderer: LinearWaveformRenderer())
+                                    .padding(.top, 35)
+                                    .padding(.bottom, 35)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .brightness(-0.9)
+                                    }
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(lineWidth: 1)
+                                    }
+                                
+                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .frame(width: 2, height: 150)
+                                    .overlay {
+                                        Image(systemName: "triangle.fill")
+                                            .resizable()
+                                            .rotationEffect(.degrees(180))
+                                            .offset(x: -0.25, y: -82)
+                                            .opacity(1)
+                                            .frame(width: 10, height: 7)
+                                    }
+                                    .foregroundStyle(.yellow)
+                                    .offset(x: -geometry.size.width / 2 + offset)
+                                    .onReceive(timer) { (_) in
+                                        if (audioPlayer.isPlaying || isPaused) {
+                                            let time = audioPlayer.currentTime().seconds
+                                            withAnimation(.linear(duration: 0.055)) {
+                                                offset = geometry.size.width * (time / fileDuration)
+                                            }
+                                        } else {
+                                            audioPlayer.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+                                            offset = 0
+                                        }
+                                    }
+                                
+                            }
+                            .padding(.top, 5)
                         }
-                        .padding(.top, 5)
                     }
                 } else {
                     if (isRecording) {
@@ -246,6 +262,12 @@ struct AudioView: View {
                                 .foregroundStyle(.secondary)
                             Spacer()
                             Text("\(String(Int(fileSize / 1024).formatted())) KiB (\(String(Int(fileSize / 1000).formatted())) KB)")
+                        }
+                        HStack {
+                            Text("vocalist.audioView.fileSize")
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text("\(String((Double(fileSize) / 1024.0 / 1024.0).formatted())) MiB (\(String((Double(fileSize) / 1000000.0).formatted())) MB)")
                         }
                     }
                 }

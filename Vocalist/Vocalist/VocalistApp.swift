@@ -18,7 +18,7 @@ struct VocalistApp: App {
                 }
                 .navigationTitle("vocalist.ui.appName")
                 .frame(idealWidth: 900, idealHeight: 550)
-                .fixedSize(horizontal: true, vertical: true)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .windowResizability(.contentSize)
     }
