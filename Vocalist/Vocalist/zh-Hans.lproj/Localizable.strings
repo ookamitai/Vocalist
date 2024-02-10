@@ -72,7 +72,7 @@
 "vocalist.audioView.button.play" = "播放";
 "vocalist.audioView.button.pause" = "暂停";
 "vocalist.audioView.button.stop" = "停止";
-"vocalist.audioView.button.delete" = "暂停";
+"vocalist.audioView.button.delete" = "删除";
 "vocalist.audioView.button.refresh" = "刷新 (异步)";
 // AuditView
 "vocalist.auditView.auditMode" = "审核模式";

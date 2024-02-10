@@ -36,7 +36,7 @@ To use the program, download binaries from [here](https://github.com/ookamitai/V
 
 ### Configure extra options
 
-- `Fast mode`
+- Fast mode
 
 Enabling this option will change the shortcut key for `Record` from `Return` to the `Right arrow key`, and change the shortcut key for `Delete` from `Delete` to the `Left arrow key`.
 
@@ -76,7 +76,7 @@ After you have done some recording, you can switch to `Audit mode` by selecting 
 
 ![Audit](image/audit.png)
 
-**Note: There's a typo in `Average duration: ... KiB`. This has been fixed in `1.0.1E`**
+**Note: There's a typo in `Average duration: ... KiB`. This has been fixed in `1.0.1E`.**
 
 Here you can see how many recordings are done, how much progress you have made, and some general file info.
 
@@ -95,6 +95,6 @@ Vocalist reloads the previous configuration if there's one when selecting the `C
 ## Todo
 - **Finished** ~~Add `AuditView` for viewing all your audio files at once~~
 - **Finished** ~~Fix `Recording` bug~~
-- Add spectrogram
+- ~~Add spectrogram~~ I just can't do that.
 - Add live recording waveform display
 - May integrate into `Playwright`, but this will only happen when `Playwright` is partially complete.
