@@ -10,41 +10,49 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         VStack {
-            VStack {
-                HStack {
-                    Label("vocalist.ui.appName", systemImage: "")
-                        .font(.title)
-                        .bold()
-                    Spacer()
+            HStack {
+                Image("icon")
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                VStack {
+                    HStack(alignment: .bottom) {
+                        Text("vocalist.ui.appName")
+                            .font(.title)
+                            .bold()
+                        Text("vocalist.ui.version")
+                            .font(.title3)
+                            .fontDesign(.monospaced)
+                            .padding(.bottom, 1)
+                            .italic()
+                        Spacer()
+                    }
+                    HStack {
+                        Text("vocalist.ui.author")
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding(.leading, 30)
                 }
-                HStack {
-                    Text("vocalist.ui.author")
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                }
-                .padding(.leading, 30)
             }
-            .padding()
             
             VStack {
                 List {
                     HStack {
-                        Text("Visit:")
+                        Text("Visit project page:")
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Button("Github") {}
+                        Link("Github", destination: URL(string: "https://github.com/ookamitai/Vocalist")!)
                             .foregroundStyle(.blue)
                             .underline()
-                            .buttonStyle(.plain)
                     }
                     HStack {
-                        Text("Visit:")
+                        Text("vocalist.aboutView.followMe")
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Button("Twitter (X)") {}
+                        Link("X (formerly Twitter)", destination: URL(string: "https://twitter.com/ookamitai/")!)
                             .foregroundStyle(.blue)
                             .underline()
-                            .buttonStyle(.plain)
                     }
                 }
                 
@@ -60,7 +68,7 @@ struct AboutView: View {
             Spacer()
         }
         .padding()
-        .frame(minWidth: 300, minHeight: 300)
+        .frame(width: 500, height: 300)
     }
 }
 
@@ -68,7 +76,7 @@ struct AboutView: View {
     struct Preview: View {
         var body: some View {
             AboutView()
-                .frame(width: 300, height: 300)
+                .frame(width: 500, height: 300)
         }
     }
     

@@ -33,7 +33,7 @@ struct ReclistLoader: View {
                     .font(.title3)
                     .fontDesign(.monospaced)
                     .italic()
-                    .padding(.top, 10)
+                    .padding(.top, 5)
                 Spacer()
             }
             Divider()

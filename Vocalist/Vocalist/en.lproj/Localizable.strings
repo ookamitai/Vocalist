@@ -88,3 +88,6 @@
 "vocalist.auditView.absent" = "Absent";
 "vocalist.auditView.avgSize" = "Average size:";
 "vocalist.auditView.avgDuration" = "Average duration:";
+// aboutview
+"vocalist.aboutView.visitProject" = "Visit project page:";
+"vocalist.aboutView.followMe" = "Follow me on";
