@@ -82,13 +82,13 @@ Here you can see how many recordings are done, how much progress you have made, 
 
 Select `Vocalist` - `About this app` will bring up the `About` window.
 
+![About](image/about.png)
+
 ### Reusing the previous configuration
 
 It's possible to reuse the previous configuration because Vocalist saves it automatically.
 
 Vocalist reloads the previous configuration if there's one when selecting the `Configuration` tab.
-
-![About](image/about.png)
 
 ## Todo
 - **Finished** ~~Add `AuditView` for viewing all your audio files at once~~
