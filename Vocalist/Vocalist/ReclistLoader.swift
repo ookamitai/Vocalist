@@ -127,53 +127,6 @@ struct ReclistLoader: View {
                 
                 Divider()
                 
-                // paging
-                /*
-                VStack {
-                    HStack {
-                        Label("vocalist.ui.config.paging", systemImage: "book.pages.fill")
-                            .font(.title2)
-                            .bold()
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Text("vocalist.paging.itemPerPage")
-                        TextField("", text: $tmp)
-                            .onSubmit {
-                                itemPerPage = UInt32(tmp) ?? 10
-                                pageNumber = UInt32(ceil(Double(filenameArray.count) / Double(itemPerPage)))
-                            }
-                        Text("\(Image(systemName: "arrow.right")) \(itemPerPage)")
-                        Spacer()
-                    }
-                    HStack {
-                        Text("vocalist.paging.pageCount")
-                        Text("\(pageNumber)")
-                            .fontDesign(.monospaced)
-                        Spacer()
-                        Text("vocalist.paging.atPage")
-                        Button("+") {
-                            if pageIndex < pageNumber {
-                                pageIndex += 1
-                            }
-                        }
-                        Text("\(pageIndex)")
-                            .fontDesign(.monospaced)
-                        Button("-") {
-                            if pageIndex > 0 {
-                                pageIndex -= 1
-                            }
-                        }
-                    }
-                    
-                }
-                .padding(.top, 5)
-                .padding(.bottom, 5)
-                
-                Divider()
-                 */
-                
                 // fastMode
                 VStack {
                     HStack {
@@ -349,7 +302,8 @@ struct ReclistLoader: View {
                 VStack {
                     HStack {
                         Label("vocalist.ui.config.removeUserDefaults", systemImage: "trash.fill")
-                            .font(.title3)
+                            .font(.title2)
+                            .bold()
                         Spacer()
                     }
                     HStack {

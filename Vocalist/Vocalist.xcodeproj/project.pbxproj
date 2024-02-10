@@ -10,6 +10,8 @@
 		FB29EF4E2B749FB200FC5B3A /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29EF4D2B749FB200FC5B3A /* AudioView.swift */; };
 		FB29EF542B74B0D700FC5B3A /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = FB29EF532B74B0D700FC5B3A /* DSWaveformImage */; };
 		FB29EF562B74B0D700FC5B3A /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = FB29EF552B74B0D700FC5B3A /* DSWaveformImageViews */; };
+		FB385DC62B77145900B58DD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB385DC52B77145900B58DD8 /* AppDelegate.swift */; };
+		FB385DC82B7714E900B58DD8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB385DC72B7714E900B58DD8 /* AboutView.swift */; };
 		FB7401112B764F4200979C59 /* AuditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7401102B764F4200979C59 /* AuditView.swift */; };
 		FB8C442C2B7361CD00D8D7F2 /* VocalistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */; };
 		FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		FB29EF4D2B749FB200FC5B3A /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
+		FB385DC52B77145900B58DD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB385DC72B7714E900B58DD8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FB7401102B764F4200979C59 /* AuditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditView.swift; sourceTree = "<group>"; };
 		FB8C44282B7361CD00D8D7F2 /* Vocalist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vocalist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocalistApp.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		FB8C442A2B7361CD00D8D7F2 /* Vocalist */ = {
 			isa = PBXGroup;
 			children = (
+				FB385DC52B77145900B58DD8 /* AppDelegate.swift */,
+				FB385DC72B7714E900B58DD8 /* AboutView.swift */,
 				FB7401102B764F4200979C59 /* AuditView.swift */,
 				FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */,
 				FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */,
@@ -167,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB385DC62B77145900B58DD8 /* AppDelegate.swift in Sources */,
+				FB385DC82B7714E900B58DD8 /* AboutView.swift in Sources */,
 				FB8C443B2B73637600D8D7F2 /* ReclistLoader.swift in Sources */,
 				FB8C442E2B7361CD00D8D7F2 /* ContentView.swift in Sources */,
 				FB8C442C2B7361CD00D8D7F2 /* VocalistApp.swift in Sources */,

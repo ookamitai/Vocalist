@@ -116,7 +116,7 @@ struct AudioView: View {
                                     .padding(.bottom, 35)
                                     .background {
                                         RoundedRectangle(cornerRadius: 8)
-                                            .brightness(-0.885)
+                                            .brightness(-0.9)
                                     }
                                     .overlay {
                                         RoundedRectangle(cornerRadius: 8)
