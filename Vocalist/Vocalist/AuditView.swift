@@ -107,7 +107,7 @@ struct AuditView: View {
                     Text("vocalist.auditView.avgDuration")
                         .foregroundStyle(.secondary)
                     Spacer()
-                    Text("\(avgDuration) KiB")
+                    Text("\(avgDuration)s")
                         .fontDesign(.monospaced)
                 }
             }

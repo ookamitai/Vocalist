@@ -5,14 +5,14 @@
 Follow me on my socials and like this repo!  
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ookamitai.svg?style=social&label=Follow%20@ookamitai)](https://twitter.com/ookamitai)
 
-
-
 ## Quick start
 This project is under the `MUGA Project` (make UTAU great again).  
 
 To use the program, download binaries from [here](https://github.com/ookamitai/Vocalist/releases/).
 
-(Currently, intel binaries are unavailable; Chinese and Japanese translations are unavailable)
+(Currently, Japanese translations are unavailable)
+
+**Note: Screenshots are taken with version `1.0D`**
 
 ### First time open
 
@@ -75,6 +75,8 @@ You can also resize the window to see the extra information for the audio.
 After you have done some recording, you can switch to `Audit mode` by selecting the `Audit mode` tab in the sidebar.
 
 ![Audit](image/audit.png)
+
+**Note: There's a typo in `Average duration: ... KiB`. This has been fixed in `1.0.1E`**
 
 Here you can see how many recordings are done, how much progress you have made, and some general file info.
 

@@ -39,7 +39,7 @@ struct AboutView: View {
             VStack {
                 List {
                     HStack {
-                        Text("Visit project page:")
+                        Text("vocalist.aboutView.visitProject")
                             .foregroundStyle(.secondary)
                         Spacer()
                         Link("Github", destination: URL(string: "https://github.com/ookamitai/Vocalist")!)
