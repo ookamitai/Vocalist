@@ -1,9 +1,17 @@
 # Vocalist: An OREMO replacement for macOS, completely written in Swift
 
+[简体中文](https://ookamitai.github.io/blogspaces/docs/vocalist/vocalist_cn/)
+
 ![](image/dist.png)
 
 Follow me on my socials and like this repo!  
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ookamitai.svg?style=social&label=Follow%20@ookamitai)](https://twitter.com/ookamitai)
+
+## Feedbacks
+
+Please send feekback back by Github issues, adding this QQ group chat, or DM me on Twitter.
+
+![QR](image/qr.JPG)
 
 ## Quick start
 This project is under the `MUGA Project` (make UTAU great again).  
@@ -30,7 +38,7 @@ To use the program, download binaries from [here](https://github.com/ookamitai/V
 
 - Click the `Load Reclist` button, this will bring up a `File Importer` window, and select the reclist you are going to use.
 
-- **Vocalist loads the file in Shift-JIS encoding by default, you can choose to load in UTF-8 by clicking the `Use UTF-8?` checkbox.**
+- **Vocalist loads the file in Shift-JIS encoding by default. You can choose to load in UTF-8 by clicking the `Use UTF-8?` checkbox.**
 
 - Click the `Load Folder` button, and select the folder you want to save your recordings to.
 
