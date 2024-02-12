@@ -96,6 +96,12 @@
             "value" : "Follow me on"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォロー"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -111,6 +117,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Visit project page:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公式ページへ："
           }
         },
         "zh-Hans" : {
@@ -130,6 +142,12 @@
             "value" : "Create Empty File"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空のファイルを作成"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -144,6 +162,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         },
         "zh-Hans" : {
@@ -162,6 +186,12 @@
             "value" : "Pause"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一時停止"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -176,6 +206,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Play"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再生"
           }
         },
         "zh-Hans" : {
@@ -194,6 +230,12 @@
             "value" : "Record"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -210,6 +252,12 @@
             "value" : "Refresh (Async)"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再読込（非同期）"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -224,6 +272,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stop"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
           }
         },
         "zh-Hans" : {
@@ -243,6 +297,12 @@
             "value" : "Stop Recording"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音停止"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -259,6 +319,12 @@
             "value" : "Channel:"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャンネル数："
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -273,6 +339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Duration:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長さ："
           }
         },
         "zh-Hans" : {
@@ -292,6 +364,12 @@
             "value" : "File is emtpy."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルが空です。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -308,6 +386,12 @@
             "value" : "File does not exist."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルが存在しません。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -322,6 +406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "File size:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルサイズ："
           }
         },
         "zh-Hans" : {
@@ -341,6 +431,12 @@
             "value" : "Failed to init audio file."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音声ファイルの初期化に失敗しました。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -358,6 +454,12 @@
             "value" : "Now recording:"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音中："
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -372,6 +474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recording..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音中・・・"
           }
         },
         "zh-Hans" : {
@@ -391,6 +499,12 @@
             "value" : "Failed to init audio recorder."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音声レコーダの初期化に失敗しました。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,6 +519,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sample Rate:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サンプリング周波数："
           }
         },
         "zh-Hans" : {
@@ -423,6 +543,12 @@
             "value" : "Saving to:"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存先："
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -437,6 +563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Absent"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "×"
           }
         },
         "zh-Hans" : {
@@ -456,6 +588,12 @@
             "value" : "Audit mode"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検査モード"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -470,6 +608,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Average duration:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平均長さ："
           }
         },
         "zh-Hans" : {
@@ -488,6 +632,12 @@
             "value" : "Average size:"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平均サイズ："
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -502,6 +652,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Current progress:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作業進捗："
           }
         },
         "zh-Hans" : {
@@ -520,6 +676,12 @@
             "value" : "Duration"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長さ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -534,6 +696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loading..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読込中・・・"
           }
         },
         "zh-Hans" : {
@@ -552,6 +720,12 @@
             "value" : "Name"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音名"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -566,6 +740,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No files."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルなし"
           }
         },
         "zh-Hans" : {
@@ -584,6 +764,12 @@
             "value" : "Presence"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存在確認"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -598,6 +784,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Present"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "○"
           }
         },
         "zh-Hans" : {
@@ -638,6 +830,28 @@
             }
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@arg2@のうちに%3$lld個完了、あと%3$lld個が残っています。"
+          },
+          "substitutions" : {
+            "arg2" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg個のファイル"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -670,6 +884,12 @@
             "value" : "Size"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイズ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -684,6 +904,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         },
         "zh-Hans" : {
@@ -702,6 +928,12 @@
             "value" : "Disabled"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -716,6 +948,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enabled"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効"
           }
         },
         "zh-Hans" : {
@@ -735,6 +973,12 @@
             "value" : "Use fast mode?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高速モードを使う？"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -749,6 +993,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Record"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音"
           }
         },
         "zh-Hans" : {
@@ -767,6 +1017,12 @@
             "value" : "Disabled"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -781,6 +1037,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enabled"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効"
           }
         },
         "zh-Hans" : {
@@ -800,6 +1062,12 @@
             "value" : "Hide item?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "収録された音名を非表示？"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -814,6 +1082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NotRecorded"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未録音"
           }
         },
         "zh-Hans" : {
@@ -832,6 +1106,12 @@
             "value" : "Recorded"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "録音済"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -846,6 +1126,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error while selecting file"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルの選択中にエラーが発生しました。"
           }
         },
         "zh-Hans" : {
@@ -865,6 +1151,12 @@
             "value" : "Load Reclist"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "収録音リストを読み込む"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -881,6 +1173,12 @@
             "value" : "Error while loading file: \"%@\""
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイル%@を読み込めませんでした。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -895,6 +1193,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Successfully loaded file \"%@\""
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイル%@を読み込みました。"
           }
         },
         "zh-Hans" : {
@@ -924,6 +1228,12 @@
             "value" : "Reclist file...(Default encoding: Shift-JIS)"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音名リストファイル（ディフォルト文字コード：Shift-JIS）"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -940,6 +1250,12 @@
             "value" : "Use UTF8?"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UTF-8を使用？"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -954,6 +1270,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error while selecting folder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダの選択中にエラーが発生しました。"
           }
         },
         "zh-Hans" : {
@@ -973,6 +1295,12 @@
             "value" : "Load Folder"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダを読み込む"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -988,6 +1316,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Successfully loaded folder \"%@\""
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダ%@を読み込みました。"
           }
         },
         "zh-Hans" : {
@@ -1018,6 +1352,18 @@
             }
           }
         },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "、合計%lldファイル"
+                }
+              }
+            }
+          }
+        },
         "zh-Hans" : {
           "variations" : {
             "plural" : {
@@ -1040,6 +1386,12 @@
             "value" : "Vocalist performs poorly when there's too many items in the sidebar.\nTo solve this problem, try splitting the reclist file."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイドバーの項目が多すぎると、Vocalistの性能が低下する可能性があります。\n必要な場合に、音名リストファイルを分割してみてください。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1054,6 +1406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Items per file:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイル毎のアイテム数："
           }
         },
         "zh-Hans" : {
@@ -1072,6 +1430,12 @@
             "value" : "Loaded items:"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ロード済みアイテム数："
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1088,6 +1452,12 @@
             "value" : "Section: %lld"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セクション%lld"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1102,6 +1472,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Split"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分割"
           }
         },
         "zh-Hans" : {
@@ -1121,6 +1497,12 @@
             "value" : "Splitter"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分割ツール"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1137,6 +1519,12 @@
             "value" : "Press Return to submit."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エンターキーを押すと提出されます。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1151,6 +1539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "About this app"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このアプリについて"
           }
         },
         "zh-Hans" : {
@@ -1187,6 +1581,12 @@
             "value" : "Audio"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音声"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1202,6 +1602,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Audit"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検査"
           }
         },
         "zh-Hans" : {
@@ -1220,6 +1626,12 @@
             "value" : "Made with love by ookamitai"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "狼太が心を込めて作りました"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1234,6 +1646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fast mode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高速モード"
           }
         },
         "zh-Hans" : {
@@ -1252,6 +1670,12 @@
             "value" : "Folder"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1266,6 +1690,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hide recorded items"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "収録済みのアイテムを非表示"
           }
         },
         "zh-Hans" : {
@@ -1284,6 +1714,12 @@
             "value" : "Reclist"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音名リスト"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1298,6 +1734,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remove UserDefaults"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UserDefaultsを削除"
           }
         },
         "zh-Hans" : {
@@ -1317,6 +1759,12 @@
             "value" : "Configuration"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1333,6 +1781,12 @@
             "value" : "To load previous configuration, select the item in the sidebar."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以前の設定を使用するには、サイドバーで当該の項目を選択してください。"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1347,6 +1801,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Splitter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分割ツール"
           }
         },
         "zh-Hans" : {
@@ -1382,6 +1842,12 @@
             "value" : "Remove"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1398,6 +1864,12 @@
             "value" : "Warning: this operation will remove all saved preferences!"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告：この操作を行うと、保存された設定が全て削除されます！"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1407,7 +1879,14 @@
       }
     },
     "X (formerly Twitter)" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X（元Twitter）"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
