@@ -99,7 +99,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "フォロー"
+            "value" : "SNS"
           }
         },
         "zh-Hans" : {
@@ -122,7 +122,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "公式ページへ："
+            "value" : "公式ページ"
           }
         },
         "zh-Hans" : {
@@ -145,7 +145,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "空のファイルを作成"
+            "value" : "新規ファイルを作成"
           }
         },
         "zh-Hans" : {
@@ -344,7 +344,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長さ："
+            "value" : "デュレーション："
           }
         },
         "zh-Hans" : {
@@ -613,7 +613,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "平均長さ："
+            "value" : "平均デュレーション："
           }
         },
         "zh-Hans" : {
@@ -657,7 +657,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "作業進捗："
+            "value" : "ステータス："
           }
         },
         "zh-Hans" : {
@@ -679,7 +679,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "長さ"
+            "value" : "デュレーション"
           }
         },
         "zh-Hans" : {
@@ -767,7 +767,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "存在確認"
+            "value" : "録音済み"
           }
         },
         "zh-Hans" : {
@@ -833,7 +833,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%#@arg2@のうちに%3$lld個完了、あと%3$lld個が残っています。"
+            "value" : "全%#@arg2@、%1$lld個済み、%3$lld個残り"
           },
           "substitutions" : {
             "arg2" : {
@@ -844,7 +844,7 @@
                   "other" : {
                     "stringUnit" : {
                       "state" : "translated",
-                      "value" : "%arg個のファイル"
+                      "value" : "%arg個"
                     }
                   }
                 }
@@ -1154,7 +1154,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "収録音リストを読み込む"
+            "value" : "音名リストを読み込み"
           }
         },
         "zh-Hans" : {
@@ -1298,7 +1298,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "フォルダを読み込む"
+            "value" : "保存フォルダを変更"
           }
         },
         "zh-Hans" : {
@@ -1321,7 +1321,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "フォルダ%@を読み込みました。"
+            "value" : "保存フォルダを%@に変更しました。"
           }
         },
         "zh-Hans" : {
@@ -1629,7 +1629,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "狼太が心を込めて作りました"
+            "value" : "狼太が心を込めて作っております。"
           }
         },
         "zh-Hans" : {
@@ -1695,7 +1695,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "収録済みのアイテムを非表示"
+            "value" : "収録済みの音名を非表示"
           }
         },
         "zh-Hans" : {
@@ -1739,7 +1739,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "UserDefaultsを削除"
+            "value" : "初期化ファィルを削除"
           }
         },
         "zh-Hans" : {
@@ -1784,7 +1784,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以前の設定を使用するには、サイドバーで当該の項目を選択してください。"
+            "value" : "スタートには、サイドバーから「設定」を選択してください。"
           }
         },
         "zh-Hans" : {
@@ -1867,7 +1867,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "警告：この操作を行うと、保存された設定が全て削除されます！"
+            "value" : "警告：全ての設定が削除されます。"
           }
         },
         "zh-Hans" : {
