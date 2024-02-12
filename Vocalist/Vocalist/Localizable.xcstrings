@@ -99,7 +99,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "关注我:"
+            "value" : "关注我："
           }
         }
       }
@@ -116,7 +116,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "访问工程页面:"
+            "value" : "访问工程网页："
           }
         }
       }
@@ -213,7 +213,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "刷新 (异步)"
+            "value" : "刷新（异步）"
           }
         }
       }
@@ -235,7 +235,7 @@
       }
     },
     "vocalist.audioView.button.stopRecord" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -262,7 +262,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "声道:"
+            "value" : "声道："
           }
         }
       }
@@ -278,7 +278,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "时长:"
+            "value" : "时长："
           }
         }
       }
@@ -327,7 +327,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文件大小:"
+            "value" : "文件大小："
           }
         }
       }
@@ -344,7 +344,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "初始化录音文件失败。"
+            "value" : "初始化音频文件失败。"
           }
         }
       }
@@ -361,7 +361,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在录制:"
+            "value" : "正在录制："
           }
         }
       }
@@ -377,7 +377,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "录制中..."
+            "value" : "录音中："
           }
         }
       }
@@ -394,7 +394,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "音频录制初始化失败。"
+            "value" : "初始化音频录音失败。"
           }
         }
       }
@@ -410,7 +410,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "采样率:"
+            "value" : "采样率："
           }
         }
       }
@@ -426,7 +426,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "保存到:"
+            "value" : "保存到："
           }
         }
       }
@@ -475,7 +475,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "平均时长:"
+            "value" : "平均时长："
           }
         }
       }
@@ -491,7 +491,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "平均大小:"
+            "value" : "平均大小："
           }
         }
       }
@@ -507,7 +507,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当前进度:"
+            "value" : "当前进度"
           }
         }
       }
@@ -613,13 +613,51 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$lld of %2$lld file(s), %3$lld more to go."
+            "value" : "%1$lld of %#@arg2@, %3$lld more to go."
+          },
+          "substitutions" : {
+            "arg2" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg file"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg files"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已录制 %1$lld个，总共 %2$lld 个，剩余 %3$lld 个"
+            "value" : "已录制 %1$lld 个文件，共 %#@arg2@ 个，剩余%3$lld 个。"
+          },
+          "substitutions" : {
+            "arg2" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -700,7 +738,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用快速模式?"
+            "value" : "使用快速模式？"
           }
         }
       }
@@ -716,7 +754,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "录制"
+            "value" : "录音"
           }
         }
       }
@@ -765,7 +803,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "隐藏项目?"
+            "value" : "隐藏项目？"
           }
         }
       }
@@ -846,7 +884,23 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "加载文件: \"%@\" 时错误"
+            "value" : "加载文件：%@ 时错误"
+          }
+        }
+      }
+    },
+    "vocalist.loadFile.loadSuccess %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successfully loaded file \"%@\""
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功加载文件：%@"
           }
         }
       }
@@ -855,14 +909,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Successfully loaded file \"%@\" with %lld entry(ies)"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "成功加载文件 \"%@\"，共 %lld 个项目"
+            "state" : "new",
+            "value" : "vocalist.loadFile.loadSuccess %1$@ %2$lld"
           }
         }
       }
@@ -879,7 +927,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "录音表文件 (默认编码: Shift-JIS)"
+            "value" : "录音表...（默认编码：Shift-JIS）"
           }
         }
       }
@@ -895,7 +943,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用 UTF8?"
+            "value" : "使用 UTF-8？"
           }
         }
       }
@@ -933,7 +981,7 @@
         }
       }
     },
-    "vocalist.loadFolder.success %@" : {
+    "vocalist.loadFolder.loadSuccess %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -945,59 +993,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "成功加载文件夹 \"%@\""
-          }
-        }
-      }
-    },
-    "vocalist.paging.atPage" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "At page:"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "页码:"
-          }
-        }
-      }
-    },
-    "vocalist.paging.itemPerPage" : {
-      "comment" : "paging",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Item per page:"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每页项目"
-          }
-        }
-      }
-    },
-    "vocalist.paging.pageCount" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Number of pages:"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "页数:"
+            "value" : "成功加载文件夹：%@"
           }
         }
       }
@@ -1005,15 +1001,33 @@
     "vocalist.splitterView.fileCount %lld" : {
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ", total %lld file(s)"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : ", total %lld file"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : ", total %lld files"
+                }
+              }
+            }
           }
         },
         "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ", 总共 %lld 个文件。"
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "，总共 %lld 文件"
+                }
+              }
+            }
           }
         }
       }
@@ -1029,7 +1043,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "当侧边栏中有太多项目时，Vocalist性能较差。\n可以用这个工具来分割文件来解决问题。"
+            "value" : "当侧边栏有过多文件时，Vocalist性能较差。尝试分割文件来解决这个问题。"
           }
         }
       }
@@ -1045,7 +1059,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每个文件包含项目:"
+            "value" : "每个文件内项目："
           }
         }
       }
@@ -1061,7 +1075,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已加载项目:"
+            "value" : "已加载项目："
           }
         }
       }
@@ -1077,7 +1091,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "分区: %lld"
+            "value" : "分区：%lld"
           }
         }
       }
@@ -1110,7 +1124,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文件分割"
+            "value" : "分割文件"
           }
         }
       }
@@ -1126,7 +1140,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "按下 Return 提交"
+            "value" : "按 Return 提交。"
           }
         }
       }
@@ -1142,7 +1156,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "关于此应用"
+            "value" : "关于这个应用"
           }
         }
       }
@@ -1182,7 +1196,7 @@
       }
     },
     "vocalist.ui.audit.title" : {
-      "comment" : "ui - Audit",
+      "comment" : "ui- Audit",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1209,7 +1223,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "狼太倾心制作"
+            "value" : "ookamitai倾心制作"
           }
         }
       }
@@ -1257,24 +1271,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "隐藏已录制的文件"
-          }
-        }
-      }
-    },
-    "vocalist.ui.config.paging" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paging"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "分页"
+            "value" : "隐藏已录制的文件？"
           }
         }
       }
@@ -1339,13 +1336,12 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "点击侧边栏项目来加载上一个配置。"
+            "value" : "从侧边栏选择“配置”来加载上次的配置。"
           }
         }
       }
     },
     "vocalist.ui.splitter.title" : {
-      "comment" : "ui - Splitter",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1366,13 +1362,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.0.2J"
+            "value" : "1.1J"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.0.2J"
+            "value" : "1.1J"
           }
         }
       }
@@ -1405,20 +1401,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "警告: 此操作会移除所有保存的偏好设置!"
+            "value" : "警告：此操作会移除所有保存的偏好设置！"
           }
         }
       }
     },
     "X (formerly Twitter)" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "X (之前的 Twitter)"
-          }
-        }
-      }
+
     }
   },
   "version" : "1.0"

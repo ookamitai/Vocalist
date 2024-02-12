@@ -111,7 +111,7 @@ struct ReclistLoader: View {
                             case .success(let file):
                                 folderPathURL = file
                                 UserDefaults.standard.set(folderPathURL, forKey: "FolderPathURL")
-                                log = "vocalist.loadFolder.success \(folderPathURL!.path())"
+                                log = String(localized: "vocalist.loadFolder.loadSuccess \(folderPathURL!.path())")
                             case .failure:
                                 log = String(localized: "vocalist.loadFolder.fileImporterError")
                             }
@@ -337,7 +337,7 @@ struct ReclistLoader: View {
                             filenameArray.append(String(item))
                         }
                     }
-                    log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL!.path()) \(filenameArray.count)")
+                    log = String(localized: "vocalist.loadFile.loadSuccess \(filePathURL!.path())")
                     // log = filenameArray[0]
                     
                 } catch {

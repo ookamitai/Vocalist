@@ -19,7 +19,7 @@
 		FB8C44332B7361CE00D8D7F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8C44322B7361CE00D8D7F2 /* Preview Assets.xcassets */; };
 		FB8C443B2B73637600D8D7F2 /* ReclistLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */; };
 		FB9F757B2B78749300DD1881 /* SplitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F757A2B78749300DD1881 /* SplitterView.swift */; };
-		FBE6ADA22B7910B000FEDF0B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBE6ADA12B7910B000FEDF0B /* Localizable.xcstrings */; };
+		FBDCAC8E2B79BCD700A38AED /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FBDCAC8D2B79BCD700A38AED /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		FB8C44342B7361CE00D8D7F2 /* Vocalist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vocalist.entitlements; sourceTree = "<group>"; };
 		FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReclistLoader.swift; sourceTree = "<group>"; };
 		FB9F757A2B78749300DD1881 /* SplitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitterView.swift; sourceTree = "<group>"; };
-		FBE6ADA12B7910B000FEDF0B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FBDCAC8D2B79BCD700A38AED /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 				FB8C442B2B7361CD00D8D7F2 /* VocalistApp.swift */,
 				FB8C442D2B7361CD00D8D7F2 /* ContentView.swift */,
 				FB8C443A2B73637600D8D7F2 /* ReclistLoader.swift */,
+				FBDCAC8D2B79BCD700A38AED /* Localizable.xcstrings */,
 				FB9F757A2B78749300DD1881 /* SplitterView.swift */,
-				FBE6ADA12B7910B000FEDF0B /* Localizable.xcstrings */,
 				FB8C442F2B7361CE00D8D7F2 /* Assets.xcassets */,
 				FB8C44342B7361CE00D8D7F2 /* Vocalist.entitlements */,
 				FB8C44312B7361CE00D8D7F2 /* Preview Content */,
@@ -141,7 +141,6 @@
 				en,
 				Base,
 				"zh-Hans",
-				ja,
 			);
 			mainGroup = FB8C441F2B7361CD00D8D7F2;
 			packageReferences = (
@@ -162,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8C44332B7361CE00D8D7F2 /* Preview Assets.xcassets in Resources */,
-				FBE6ADA22B7910B000FEDF0B /* Localizable.xcstrings in Resources */,
+				FBDCAC8E2B79BCD700A38AED /* Localizable.xcstrings in Resources */,
 				FB8C44302B7361CE00D8D7F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +192,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -256,6 +256,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
