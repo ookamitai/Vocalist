@@ -99,30 +99,28 @@ struct AudioView: View {
                                 .frame(height: 2)
                                 .foregroundStyle(.secondary)
                                 .overlay {
-                                    ForEach([-2, -8/3, -4, -8, 8, 4, 8/3, 2], id: \.self) { num in
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .frame(width: 2, height: 10)
-                                            .foregroundStyle(.white)
-                                            .offset(x: -geometry.size.width / num)
-                                    }
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 2, height: 10)
+                                        .foregroundStyle(.white)
+                                        .offset(x: -geometry.size.width / 2)
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 2, height: 10)
+                                        .foregroundStyle(.white)
+                                        .offset(x: geometry.size.width / 2)
                                     RoundedRectangle(cornerRadius: 8)
                                         .frame(width: 2, height: 10)
                                         .foregroundStyle(.white)
                                         .offset(x: 0)
                                 }
+                            
                             ZStack {
-                                WaveformView(audioURL: URL(filePath: filePath), configuration: configuration, renderer: LinearWaveformRenderer())
-                                    .padding(.top, 35)
-                                    .padding(.bottom, 35)
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .brightness(-0.9)
-                                    }
-                                    .overlay {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(lineWidth: 1)
-                                    }
-                                
+                                    WaveformView(audioURL: URL(filePath: filePath), configuration: configuration, renderer: LinearWaveformRenderer())
+                                        .padding(.top, 35)
+                                        .padding(.bottom, 35)
+                                        .overlay {
+                                            RoundedRectangle(cornerRadius: 8)
+                                                .stroke(lineWidth: 1)
+                                        }
                                 
                                 RoundedRectangle(cornerRadius: 8)
                                     .frame(width: 2, height: 150)
@@ -165,9 +163,10 @@ struct AudioView: View {
             }
             .frame(height: 150)
             .padding(5)
+            .padding(.bottom, 15)
             Divider()
             HStack {
-                Button(isRecording ? "\(String(localized: "vocalist.audioView.button.stopRecord")) \(Image(systemName: fastMode ? "arrow.right" : "return"))" : "\(String(localized: "vocalist.audioView.button.record")) \(Image(systemName: fastMode ? "arrow.right" : "return"))", systemImage: "record.circle") {
+                Button(isRecording ? "\(String(localized: "vocalist.audioView.button.stopRecord", table: "")) \(Image(systemName: fastMode ? "arrow.right" : "return"))" : "\(String(localized: "vocalist.audioView.button.record")) \(Image(systemName: fastMode ? "arrow.right" : "return"))", systemImage: "record.circle") {
                     isRecording.toggle()
                     if isRecording {
                         filePresent = .notPresent

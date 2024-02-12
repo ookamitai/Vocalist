@@ -44,6 +44,14 @@ struct ContentView: View {
                                 .symbolRenderingMode(.hierarchical)
                         }
                     }
+                    Section("vocalist.ui.splitter.title") {
+                        NavigationLink {
+                            SplitterView(files: files, filePath: (filePathURL ?? URL(filePath: "./123.txt")).getParentDir())
+                        } label: {
+                            Label("vocalist.splitterView.splitter", systemImage: "doc.on.doc")
+                                .symbolRenderingMode(.hierarchical)
+                        }
+                    }
                     
                     Section("vocalist.ui.audio.title") {
                         ForEach(filteredFiles, id: \.self) { item in
@@ -96,6 +104,22 @@ func getFileSize(_ x: String) -> UInt64 {
         return fileSize
     } catch {
         return 0
+    }
+}
+
+extension URL {
+    func getParentDir() -> String {
+        let s = self.path()
+        let sArray = s.components(separatedBy: "/")
+        var result = ""
+        for (index, data) in sArray.enumerated() {
+            if (index + 1 == sArray.count) {
+                break
+            } else {
+                result += data + "/"
+            }
+        }
+        return result
     }
 }
 

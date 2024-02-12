@@ -163,6 +163,7 @@ struct ReclistLoader: View {
                                     Image(systemName: "arrow.left")
                                 }
                             }
+                            .disabled(true)
                             .frame(width: 150, height: 65)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .overlay {
@@ -190,6 +191,7 @@ struct ReclistLoader: View {
                                     Image(systemName: "delete.left")
                                 }
                             }
+                            .disabled(true)
                             .frame(width: 150, height: 65)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .overlay {
@@ -205,10 +207,6 @@ struct ReclistLoader: View {
                         Spacer()
                     }
                     .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 8)
-                            .brightness(-0.9)
-                    }
                     .overlay {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(.gray, lineWidth: 1)
@@ -284,10 +282,6 @@ struct ReclistLoader: View {
                         Spacer()
                     }
                     .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 8)
-                            .brightness(-0.9)
-                    }
                     .overlay {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(.gray, lineWidth: 1)
@@ -347,7 +341,7 @@ struct ReclistLoader: View {
                     // log = filenameArray[0]
                     
                 } catch {
-                    log = String(localized: "vocalist.loadFile.loadError \(error.localizedDescription)")
+                    log = String(localized: "vocalist.loadFile.loadError \(filePathURL!.path())")
                 }
             }
         }

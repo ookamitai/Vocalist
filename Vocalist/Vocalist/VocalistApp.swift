@@ -14,7 +14,7 @@ struct VocalistApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                // .environment(\.locale, .init(identifier: "en"))
+                // .environment(\.locale, .init(identifier: "zh-Hans"))
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
                 }

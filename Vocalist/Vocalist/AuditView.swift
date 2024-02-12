@@ -19,7 +19,6 @@ struct AuditView: View {
     @State var files: [String]
     @State var gridData: [(String, Bool, Double, UInt64)] = []
     var body: some View {
-        
         VStack {
             HStack {
                 Label("vocalist.auditView.auditMode", systemImage: "filemenu.and.cursorarrow")
@@ -27,6 +26,8 @@ struct AuditView: View {
                     .bold()
                 Spacer()
             }
+            .padding(.top, 3)
+            .padding(.bottom, 3)
             Divider()
             HStack {
                 Text("vocalist.auditView.currentProgress")
@@ -70,6 +71,7 @@ struct AuditView: View {
                         LazyVGrid(columns: cols) {
                             ForEach(gridData, id: \.0) { data in
                                 Text("\(data.0).wav")
+                                    .foregroundStyle(data.1 ? .white : .red)
                                 Text(data.1 ? "vocalist.auditView.present" : "vocalist.auditView.absent")
                                 Text(data.1 ? "\(data.2)s" : "-")
                                 Text(data.1 ? "\(data.3 / 1024) KiB" : "-")
@@ -77,6 +79,7 @@ struct AuditView: View {
                             .padding(.top, 1)
                             .padding(.bottom, 1)
                         }
+                        .padding(.bottom, 10)
                     }
                 }
                 .task {
