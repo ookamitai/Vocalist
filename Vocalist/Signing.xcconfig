@@ -1,0 +1,11 @@
+//
+//  SigningConfig.xcconfig
+//  Vocalist
+//
+//  Created by ookamitai on 2/13/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+DEVELOPMENT_TEAM = 6PPLU9GFJ6

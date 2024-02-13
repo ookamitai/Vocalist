@@ -9,9 +9,13 @@ Follow me on my socials and like this repo!
 
 ## Feedbacks
 
-Please send feekback back by Github issues, adding this QQ group chat, or DM me on Twitter.
+Please send feedback back by Github, or DM me on Twitter.
 
-![QR](image/qr.JPG)
+## Credits
+
+Japanese translations: [SuibianP](https://github.com/SuibianP)  
+
+Japanese translations reviewer: TNT0217
 
 ## Quick start
 This project is under the `MUGA Project` (make UTAU great again).  
