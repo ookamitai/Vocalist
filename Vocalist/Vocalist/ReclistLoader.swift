@@ -83,9 +83,9 @@ struct ReclistLoader: View {
                                 log = String(localized: "vocalist.loadFile.fileImporterError")
                             }
                         }
+                        Toggle("vocalist.loadFile.useUTF8Toggle", isOn: $useUTF8)
                         Text(filePathURL?.path() ?? "None")
                         Spacer()
-                        Toggle("vocalist.loadFile.useUTF8Toggle", isOn: $useUTF8)
                     }
                 }
                 .padding(.top, 5)
@@ -137,17 +137,6 @@ struct ReclistLoader: View {
                     }
                     
                     HStack {
-                        Toggle("vocalist.fastMode.fastModeToggle", isOn: $fastMode)
-                            .onChange(of: fastMode) {
-                                UserDefaults.standard.set(hideRec, forKey: "FastMode")
-                            }
-                            .padding(.leading, 2)
-                        Spacer()
-                    }
-                    .padding(.bottom, 5)
-                    .padding(.leading, 1)
-                    
-                    HStack {
                         Spacer()
                         
                         VStack {
@@ -172,6 +161,7 @@ struct ReclistLoader: View {
                             }
                             Text("vocalist.fastMode.enabled")
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             fastMode = true
                         }
@@ -200,6 +190,7 @@ struct ReclistLoader: View {
                             }
                             Text("vocalist.fastMode.disabled")
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             fastMode = false
                         }
@@ -225,16 +216,6 @@ struct ReclistLoader: View {
                             .bold()
                         Spacer()
                     }
-                    HStack {
-                        Toggle("vocalist.hideRec.hideRecToggle", isOn: $hideRec)
-                            .onChange(of: hideRec) {
-                                UserDefaults.standard.set(hideRec, forKey: "ShowRecordedFiles")
-                            }
-                            .padding(.leading, 2)
-                        Spacer()
-                    }
-                    .padding(.bottom, 5)
-                    .padding(.leading, 1)
                     
                     HStack {
                         Spacer()
@@ -253,6 +234,7 @@ struct ReclistLoader: View {
                             }
                             Text("vocalist.hideRec.enabled")
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             hideRec = true
                         }
@@ -276,6 +258,7 @@ struct ReclistLoader: View {
                             }
                             Text("vocalist.hideRec.disabled")
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             hideRec = false
                         }

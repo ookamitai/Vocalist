@@ -925,18 +925,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Disabled"
+            "value" : "Disable"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "無効"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "禁用"
           }
         }
@@ -947,42 +947,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enabled"
+            "value" : "Enable"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "有効"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "启用"
-          }
-        }
-      }
-    },
-    "vocalist.fastMode.fastModeToggle" : {
-      "comment" : "fastMode",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use fast mode?"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "高速モードを使う？"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用快速模式？"
           }
         }
       }
@@ -1014,18 +991,18 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Disabled"
+            "value" : "Disable"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "無効"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "禁用"
           }
         }
@@ -1036,42 +1013,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enabled"
+            "value" : "Enable"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "有効"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "启用"
-          }
-        }
-      }
-    },
-    "vocalist.hideRec.hideRecToggle" : {
-      "comment" : "hideRec",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hide item?"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "収録された音名を非表示？"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "隐藏项目？"
           }
         }
       }
@@ -1564,6 +1518,12 @@
             "value" : "Vocalist"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocalist"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1825,6 +1785,12 @@
             "value" : "1.1J"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1.1J"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1884,6 +1850,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "X（元Twitter）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X （原 推特）"
           }
         }
       }
