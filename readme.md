@@ -90,6 +90,12 @@ After you have done some recording, you can switch to `Audit mode` by selecting 
 
 Here you can see how many recordings are done, how much progress you have made, and some general file info.
 
+### Using `Splitter` to split files
+
+This panel is self-explanatory. Use this panel as guided.
+
+![Splitter](image/splitter.png)
+
 ### About this app
 
 Select `Vocalist` - `About this app` will bring up the `About` window.
