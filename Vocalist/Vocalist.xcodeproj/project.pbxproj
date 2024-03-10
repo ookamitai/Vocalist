@@ -321,7 +321,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 134B0A6;
 				DEVELOPMENT_ASSET_PATHS = "\"Vocalist/Preview Content\"";
 				DEVELOPMENT_TEAM = "$(inherited)";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = "$(inherited)";
@@ -337,7 +337,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.1E;
+				MARKETING_VERSION = 1.1J;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ookamitai.Vocalist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -358,7 +358,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 134B0A6;
 				DEVELOPMENT_ASSET_PATHS = "\"Vocalist/Preview Content\"";
 				DEVELOPMENT_TEAM = "$(inherited)";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = "$(inherited)";
@@ -374,7 +374,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.1E;
+				MARKETING_VERSION = 1.1J;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ookamitai.Vocalist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
