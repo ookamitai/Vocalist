@@ -22,9 +22,7 @@ This project is under the `MUGA Project` (make UTAU great again).
 
 To use the program, download binaries from [here](https://github.com/ookamitai/Vocalist/releases/).
 
-(Currently, Japanese translations are unavailable)
-
-**Note: Screenshots are taken with version `1.0D`**
+**Note: Screenshots are taken with version `1.0D`, the most recent version is `1.1J` with Japanese translations.**
 
 ### First time open
 
