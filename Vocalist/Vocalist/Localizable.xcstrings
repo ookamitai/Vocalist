@@ -88,6 +88,9 @@
     "Github" : {
 
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "vocalist.aboutView.followMe" : {
       "localizations" : {
         "en" : {
@@ -1818,6 +1821,51 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "移除"
+          }
+        }
+      }
+    },
+    "vocalist.userDefaults.removeConfirmationWarning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This operation will remove all saved preferences and cannot be undone!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この操作により、保存されているすべての設定が削除され、元に戻すことはできません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此操作将会清除所有保存的偏好设置并且不可撤销！"
+          }
+        }
+      }
+    },
+    "vocalist.userDefaults.removeSuccess" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successfully removed saved preferences."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存された設定が正常に削除されました。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功删除了所有偏好设置。"
           }
         }
       }

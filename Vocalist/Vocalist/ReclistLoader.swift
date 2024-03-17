@@ -21,7 +21,7 @@ struct ReclistLoader: View {
     @State private var tmp: String = ""
     @State private var importFile: Bool = false
     @State private var importFolder: Bool = false
-    
+    @State private var isConfirming: Bool = false
     
     var body: some View {
         VStack {
@@ -285,8 +285,16 @@ struct ReclistLoader: View {
                     }
                     HStack {
                         Button("vocalist.userDefaults.remove") {
-                            UserDefaults.resetDefaults()
+                            isConfirming = true
+                            // UserDefaults.resetDefaults()
                         }
+                        .confirmationDialog("vocalist.userDefaults.removeConfirmationWarning", isPresented: $isConfirming) {
+                            Button("vocalist.userDefaults.remove") {
+                                UserDefaults.resetDefaults()
+                                log = String(localized: "vocalist.userDefaults.removeSuccess")
+                            }
+                        }
+                        
                         Text("vocalist.userDefaults.removeWarning")
                             .foregroundStyle(.red)
                         Spacer()
