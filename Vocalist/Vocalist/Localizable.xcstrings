@@ -1785,19 +1785,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.1J"
+            "value" : "1.1.1J"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.1J"
+            "value" : "1.1.1J"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "1.1J"
+            "value" : "1.1.1J"
           }
         }
       }
