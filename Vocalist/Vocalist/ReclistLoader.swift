@@ -222,8 +222,9 @@ struct ReclistLoader: View {
                         
                         VStack {
                             List {
+                                Label("vocalist.hideRec.recorded", systemImage: "waveform")
+                                    .opacity(0.5)
                                 Label("vocalist.hideRec.notRecorded", systemImage: "waveform")
-                                Spacer()
                             }
                             .disabled(true)
                             .frame(width: 150, height: 65)
@@ -244,8 +245,6 @@ struct ReclistLoader: View {
                         VStack {
                             List {
                                 Label("vocalist.hideRec.recorded", systemImage: "waveform")
-                                    .opacity(0.5)
-                                
                                 Label("vocalist.hideRec.notRecorded", systemImage: "waveform")
                                 
                             }
@@ -317,6 +316,7 @@ struct ReclistLoader: View {
             // Spacer()
         }
         .padding()
+        .animation(.default, value: hideRec)
         .onAppear {
             if filePathURL != nil {
                 var rawFile = ""

@@ -16,13 +16,7 @@ struct ContentView: View {
     @State private var fastMode: Bool = UserDefaults.standard.bool(forKey: "FastMode")
     @State private var selected: String = ""
     @State private var files: [String] = []
-    
-    var filteredFiles: [String] {
-        files.filter { item in
-            !(isFileExist((folderPathURL?.path() ?? "./") + item + ".wav") && hideRecorded)
-        }
-    }
-    
+
     var body: some View {
         VStack {
             NavigationSplitView {
@@ -54,11 +48,11 @@ struct ContentView: View {
                     }
                     
                     Section("vocalist.ui.audio.title") {
-                        ForEach(filteredFiles, id: \.self) { item in
+                        ForEach(files, id: \.self) { item in
                             NavigationLink() {
                                     AudioView(folderPath: folderPathURL?.path() ?? "./", fileName: item, fastMode: fastMode)
                                 } label: {
-                                    if isFileExist(buildPath(item)) {
+                                    if doesFileExist(buildPath(item)) && hideRecorded {
                                         if !(getFileSize(buildPath(item)) == 0) {
                                             Label(item, systemImage: "waveform")
                                                 .opacity(0.5)
@@ -72,7 +66,6 @@ struct ContentView: View {
                     }
                 }
                 .defaultScrollAnchor(.center)
-                .animation(.default, value: filteredFiles)
                     
             } detail: {
                 Text("vocalist.ui.author")
@@ -93,7 +86,7 @@ struct ContentView: View {
 
 }
 
-func isFileExist(_ x: String) -> Bool {
+func doesFileExist(_ x: String) -> Bool {
     return FileManager.default.fileExists(atPath: x)
 }
 

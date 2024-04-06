@@ -303,7 +303,7 @@ struct AudioView: View {
     }
     
     func refreshData() async -> Void {
-        let audioHere = isFileExist(filePath)
+        let audioHere = doesFileExist(filePath)
         if (audioHere) {
             filePresent = .isPresent
         } else {
