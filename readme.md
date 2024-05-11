@@ -24,7 +24,7 @@ To use the program, download binaries from [here](https://github.com/ookamitai/V
 
 **Note: Screenshots are taken with version `1.0D`, the most recent version is `1.1J` with Japanese translations.**
 
-### First time open
+### First time use
 
 - Once the program opens, you'll be greeted with the main window.
 
